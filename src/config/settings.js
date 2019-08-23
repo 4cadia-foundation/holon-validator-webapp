@@ -3,5 +3,9 @@ module.exports = {
   host: 'rinkeby.caralabs.me',
   port: '18575',
   network: 4,
-  clearStorage: false
+  clearStorage: false,
+  database: {
+    name: 'ValidatorDatabase',
+    version: 1
+  }
 };
