@@ -31,7 +31,7 @@ class WelcomeBack extends Component {
             msg: "Openning wallet",
         });
         //console.log('handleClick/state/2', this.state);
-        this.props.openWallet(this.state.password);        
+        this.props.openWallet(this.state.password);
     }
 
     validateForm() {
@@ -45,7 +45,7 @@ class WelcomeBack extends Component {
     }
 
     static getDerivedStateFromProps(nextProps, prevState) {
-        if (nextProps.wallet.error.length > 2 && prevState.isLoading && prevState.password.length> 1) {
+        if (nextProps.wallet.error.length > 2 && prevState.isLoading && prevState.password.length > 1) {
             //console.log('WelcomeBack/getDerivedStateFromProps/nextProps', nextProps.wallet.error, nextProps.wallet.error.length, (nextProps.wallet.error.length > 2));
             const msg = 'Erro: ' + nextProps.wallet.error;
             console.error('WelcomeBack/getDerivedStateFromProps: ', msg);
@@ -53,7 +53,7 @@ class WelcomeBack extends Component {
         }
         if (nextProps.wallet.openedWallet) {
             return { openedWallet: nextProps.wallet.openedWallet };
-        } 
+        }
         return null;
     }
 

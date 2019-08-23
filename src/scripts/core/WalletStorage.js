@@ -16,10 +16,9 @@ class WalletStorage {
   }
 
 
-  getChromeStorage () {
-    return this.indexedDBService.instance.wallets.get(1, item => {
-      return item.wallet;
-    });
+  async getChromeStorage () {
+    const item = await this.indexedDBService.instance.wallets.toArray();
+    return item[0].wallet;
   }
 
 
@@ -77,6 +76,7 @@ class WalletStorage {
         //console.log('submitPassword/got wallet encrypted from store', encrypted);
         console.log('submitPassword/got wallet encrypted from store');
         const wallet = await ethers.Wallet.fromEncryptedJson(encrypted, password);
+
         console.log('submitPassword/wallet decrypted');
         // const wallet = new ethers.Wallet('37CB7B1DEF9DC0F219DB7D0A0D14E2F1E25609FE2CFE31C8DA6DA70EAFB43E2F')
         console.log('submitPassword/wallet', wallet);
