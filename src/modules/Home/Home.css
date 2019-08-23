@@ -1,0 +1,7 @@
+.expandView {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  width: 550px;
+  margin-top: 20px;
+}

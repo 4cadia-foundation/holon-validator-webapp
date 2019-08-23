@@ -1,0 +1,8 @@
+.btn-history-close {
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+#title-history {
+    margin-top: 20px;
+}

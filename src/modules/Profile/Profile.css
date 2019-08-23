@@ -1,0 +1,8 @@
+.btn-profile-close {
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+.pad10b {
+    padding-bottom: 10px;
+}

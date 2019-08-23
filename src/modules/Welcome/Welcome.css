@@ -1,0 +1,9 @@
+.gridPrincipal {
+    margin-top: 50px;
+}
+
+#welcomeButton {
+    margin-top: 40px;
+    display: inline-block;
+    margin-block-end: 30px;
+}

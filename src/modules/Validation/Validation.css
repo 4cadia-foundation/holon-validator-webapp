@@ -1,0 +1,22 @@
+.btn-validation-close {
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+.txtInfo {
+    color: red;
+}
+
+.ask-question {
+    font-size: 18px;
+}
+
+.grdButton {
+    padding-top: 10px;
+    overflow: hidden;
+}
+
+.btnGroupLine {
+    margin:5px;
+    font-size: 13px;
+}

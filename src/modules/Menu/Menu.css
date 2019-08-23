@@ -1,0 +1,52 @@
+* {
+    margin: 0;
+}
+
+.btn-menu-close {
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+.line-menu {
+    border: 0.5px solid black;
+    width: 100%;
+}
+
+#title-menu {
+    margin-top: 5px;
+    margin-bottom: 0px;
+}
+
+.links{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-top: 20px;
+    margin-left: 20px;
+} 
+
+.links2 {
+    height: 120px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-top: 20px;
+    margin-left: 20px;
+}
+
+.space-icon-p {
+    margin-left: 20px;
+    color: #000;
+}
+
+#glyph-color {
+    color: #000;
+}
+
+#dropdown {
+    margin: 0 20px;
+}
+
+.icons {
+    margin-left: 20px;
+}

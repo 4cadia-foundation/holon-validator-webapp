@@ -1,0 +1,14 @@
+#container-balance {
+    height: 90px;
+    border: ridge var(--color-orange);
+    margin-top: 20px;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+#p-balance {
+    font-size: 27px;
+}
