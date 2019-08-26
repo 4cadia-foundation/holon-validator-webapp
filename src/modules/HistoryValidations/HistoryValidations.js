@@ -7,7 +7,6 @@ import * as ValidatorActions from '../../redux/actions/validator';
 
 import CloseIconPage from '../../components/CloseIconPage/CloseIconPage';
 import Loader from '../../components/Loader/Loader';
-import PendingValidationsBox from '../../components/PendingValidationsBox/PendingValidationsBox';
 import PendingValidations from '../../components/PendingValidations/PendingValidations';
 
 import './HistoryValidations.css';
