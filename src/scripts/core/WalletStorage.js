@@ -1,33 +1,29 @@
 import { ethers } from 'ethers';
 import Transactor from './Transactor';
+import IndexedDBService from './IndexedDBService';
+
+
 
 class WalletStorage {
 
+  constructor () {
+    this.indexedDBService = new IndexedDBService();
+
+  }
+
   setChromeStorage(value) {
-    return new Promise((resolve, reject) => {
-      localStorage.set({ 'key': value }, () => {
-        resolve('value save with succesful');
-      })
-    })
+    return this.indexedDBService.instance.wallets.add({wallet: value});
   }
 
 
-  getChromeStorage() {
-    return new Promise((resolve, reject) => {
-      localStorage.get(['key'], (result) => {
-        resolve(result.key);
-      });
-    })
-
+  async getChromeStorage () {
+    const item = await this.indexedDBService.instance.wallets.toArray();
+    return item[0].wallet;
   }
 
 
   clearStorage() {
-    return new Promise((resolve, reject) => {
-      localStorage.clear(() => {
-        resolve('removed with successfull');
-      })
-    })
+    return this.indexedDBService.instance.wallets.clear();
   }
 
 
@@ -63,7 +59,6 @@ class WalletStorage {
       //console.log('createNewVault/randomMnemonic', randomMnemonic);
       return this.createNewVaultAndRestore(randomMnemonic, password);
     } catch (exception) {
-      console.log('createNewVault/exception', exception);
       return exception;
     }
   }
@@ -80,7 +75,8 @@ class WalletStorage {
         }
         //console.log('submitPassword/got wallet encrypted from store', encrypted);
         console.log('submitPassword/got wallet encrypted from store');
-        const wallet = ethers.Wallet.fromEncryptedJson(encrypted, password);
+        const wallet = await ethers.Wallet.fromEncryptedJson(encrypted, password);
+
         console.log('submitPassword/wallet decrypted');
         // const wallet = new ethers.Wallet('37CB7B1DEF9DC0F219DB7D0A0D14E2F1E25609FE2CFE31C8DA6DA70EAFB43E2F')
         console.log('submitPassword/wallet', wallet);
