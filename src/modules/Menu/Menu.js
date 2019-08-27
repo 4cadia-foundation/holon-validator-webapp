@@ -62,7 +62,7 @@ class Menu extends Component {
                     <div className="flex-column">
                             <Link to="/historyvalidations">
                                 <Glyphicon id="glyph-color" glyph="dashboard"/> 
-                                <a className="space-icon-p paragraph">History Validations</a>
+                                <span className="space-icon-p paragraph">History Validations</span>
                             </Link>
                         </div>
                     </div>
@@ -71,7 +71,7 @@ class Menu extends Component {
                         <div className="flex-column">
                             <Link to="/profile">
                                 <Glyphicon id="glyph-color" glyph="user"/> 
-                                <a href="" className="space-icon-p paragraph">Profile</a>
+                                <span className="space-icon-p paragraph">Profile</span>
                             </Link>
                         </div>
                         <div className="flex-column">
@@ -83,7 +83,7 @@ class Menu extends Component {
                         <div className="flex-column">
                             <Link to="/backupphrase">
                                 <Glyphicon id="glyph-color" glyph="lock"/>
-                                <a href="" className="space-icon-p paragraph">Secret Backup Phrase</a>
+                                <span  className="space-icon-p paragraph">Secret Backup Phrase</span>
                             </Link>
                         </div>
                         <div  className="flex-column">
