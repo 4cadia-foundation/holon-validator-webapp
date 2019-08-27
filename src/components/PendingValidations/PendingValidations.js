@@ -40,7 +40,7 @@ class PendingValidations extends Component {
     if ( (!this.state.validationPending) || (this.state.validationPending.length < 1) ) {
       return ( 
         <div className="margin-top-212">
-          <p className="information paragraph text-center">There is no requests yet. 😉 </p>
+          <p className="information paragraph text-center">No requests found! 😉 </p>
         </div>
        )
     } else {
