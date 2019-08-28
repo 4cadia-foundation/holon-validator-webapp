@@ -27,6 +27,11 @@
     margin-bottom: 30px
 }
 
+.no-margin-side {
+    margin-right: 0;
+    margin-left: 0;
+}
+
 .space-between {
     display: flex;
     flex-direction: column;
