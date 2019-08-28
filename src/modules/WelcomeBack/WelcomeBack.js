@@ -7,7 +7,6 @@ import { bindActionCreators } from 'redux';
 import * as WalletActions from "../../redux/actions/wallet";
 
 import Loader from '../../components/Loader/Loader';
-import logo from '../../images/logo.png';
 import './WelcomeBack.css'
 
 class WelcomeBack extends Component {
@@ -67,7 +66,7 @@ class WelcomeBack extends Component {
         return (
             <Grid className="margin-top-50">
                 <Row className="text-center">
-                    <img className="logo" src={logo} alt="Logo" />
+                    {/* <img className="logo" src={logo} alt="Logo" /> */}
                 </Row>
                 <Form>
                     <div>
