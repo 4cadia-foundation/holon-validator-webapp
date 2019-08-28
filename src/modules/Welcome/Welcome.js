@@ -8,6 +8,7 @@ import * as WalletActions from "../../redux/actions/wallet";
 
 import holon from '../../images/holon.png';
 import validation from '../../images/validation.svg';
+
 import Wallet from '../../scripts/core/WalletStorage';
 import Settings from '../../config/settings';
 
