@@ -6,7 +6,7 @@ import { connect } from 'react-redux';
 import * as ValidatorActions from '../../redux/actions/validator';
 
 import CloseIconPage from '../../components/CloseIconPage/CloseIconPage';
-import logo from '../../images/logo.png';
+import logo from '../../images/holon38.png';
 import './Profile.css';
 
 class Profile extends Component {

@@ -7,7 +7,7 @@ import { connect } from 'react-redux';
 import * as ValidatorActions from '../../redux/actions/validator';
 
 import Settings from '../../config/settings';
-import logo from '../../images/logo.png';
+import logo from '../../images/holon38.png';
 import '../../styles/_utils.css';
 import './Menu.css';
 
