@@ -84,32 +84,32 @@ class WelcomeBack extends Component {
                          <h3 className="title">Welcome Back.</h3>
                         </Row>
                     </Row>
-                        <Row className="text-center">
-                            <p className="paragraph">The decentralized web waits for you!</p>
-                        </Row>
-                        <Row>
-                            <Col className="col-sm-12">
-                                <Form className="col-sm-6 col-sm-offset-3">
-                                    <label className="paragraph label-welcomeback">Password</label>
-                                    <FormControl
-                                        className="paragraph"
-                                        id="password"
-                                        type="password"
-                                        value={this.state.password}
-                                        placeholder="The password must have 8 characters"
-                                        onChange={this.handleChange}
-                                    />
-                                </Form>
-                            </Col>
-                        </Row>
-                        <Row className="containerButton col-sm-12">
-                            <Col className="text-center col-sm-4 col-sm-offset-4">
-                                <Button disabled={!this.validateForm()} className="paragraph btn btn-large" bsSize="large" block bsStyle="warning" type="submit" onClick={this.handleClick}>
-                                    Login
-                                </Button>
-                            </Col>
-                            <p className="paragraph p-welcomeback" align="center">Forgot your password? <Link to="/importwallet">Import</Link>  using your phrase.</p>
-                        </Row>
+                    <Row className="text-center">
+                        <p className="paragraph">The decentralized web waits for you!</p>
+                    </Row>
+                    <Row>
+                        <Col className="col-sm-12">
+                            <Form className="col-sm-6 col-sm-offset-3">
+                                <label className="paragraph label-welcomeback">Password</label>
+                                <FormControl
+                                    className="paragraph"
+                                    id="password"
+                                    type="password"
+                                    value={this.state.password}
+                                    placeholder="The password must have 8 characters"
+                                    onChange={this.handleChange}
+                                />
+                            </Form>
+                        </Col>
+                    </Row>
+                    <Row className="containerButton col-sm-12">
+                        <Col className="text-center col-sm-4 col-sm-offset-4">
+                            <Button disabled={!this.validateForm()} className="paragraph btn btn-large" bsSize="large" block bsStyle="warning" type="submit" onClick={this.handleClick}>
+                                Login
+                            </Button>
+                        </Col>
+                        <p className="paragraph p-welcomeback" align="center">Forgot your password? <Link to="/importwallet">Import</Link>  using your phrase.</p>
+                    </Row>
                     <Loader visible={this.state.isLoading} message={this.state.msg} />
                 </Grid>
             </div>
