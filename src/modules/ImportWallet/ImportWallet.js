@@ -8,7 +8,9 @@ import * as WalletActions from "../../redux/actions/wallet";
 
 import Loader from "../../components/Loader/Loader";
 
-import './ImportWallet'
+import holon from '../../images/holon38.png'; 
+
+import './ImportWallet.css';
 
 class ImportWallet extends Component {
 
@@ -145,43 +147,42 @@ class ImportWallet extends Component {
     }
 
     return (
-      <div>
+      <div className="principal">
+        <Col className="col-sm-3 menuBar">
+          <div className="header-holon">
+            <img className="logoHolonHeard" src={holon} alt="logoHolon" />
+            <h3 className="title titleHeader">Holon</h3>
+          </div>
+        </Col>
         <Grid>
           <Row>
-            <div className="text-center">
+            <div className="text-center paddingTitle">
               <h3 className="title">Import your Wallet</h3>
             </div>
           </Row>
-
           <Row>
-            <Col xs={12} md={12}>
-              <Form>
+            <Col className="col-sm-12">
+              <Form className="col-sm-6 col-sm-offset-3">
                 <FormGroup validationState={this.getValidationPhrase()}>
-                    <ControlLabel className="paragraph">Wallet Seed</ControlLabel>
+                    <ControlLabel className="paragraph margin-top-30">Wallet Seed</ControlLabel>
                     <FormControl className="paragraph" rows="7" componentClass="textarea" placeholder="Insert your seed phrase" value={ this.state.phrase } onChange={event => this.handleChange(event, 'phrase')}/>
                     <FormControl.Feedback />
                     <HelpBlock className="paragraph">Seed phrases are 12 words long</HelpBlock>
                 </FormGroup>
-
                 <FormGroup validationState={this.getValidationPassword()}>
                     <ControlLabel className="paragraph">New Password</ControlLabel>
                     <FormControl componentClass="input" type="password" value={ this.state.password } onChange={event => this.handleChange(event, 'password')}/>
-
                     <FormControl.Feedback />
                     <HelpBlock className="paragraph">Minimum validation of 8 characters</HelpBlock>
                 </FormGroup>
-
                 <FormGroup validationState={this.getValidationEqualPassword()}>
                     <ControlLabel className="paragraph">Confirm Password</ControlLabel>
                     <FormControl componentClass="input" type="password" value={ this.state.confirm } onChange={event => this.handleChange(event, 'confirm')} />
-
                     <FormControl.Feedback />
                     <HelpBlock className="paragraph">Password must be the same as field confirm</HelpBlock>
                 </FormGroup>
-
-                <Button className="paragraph" bsSize="large" onClick={this.handleSubmit} block bsStyle="warning">Import</Button>
+                <Button className="paragraph margin-top-50" bsSize="large" onClick={this.handleSubmit} block bsStyle="warning">Import</Button>
               </Form>
-
             </Col>
           </Row>
         </Grid>

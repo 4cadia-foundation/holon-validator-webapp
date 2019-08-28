@@ -27,11 +27,6 @@
     margin-bottom: 30px
 }
 
-.no-margin-side {
-    margin-right: 0;
-    margin-left: 0;
-}
-
 .space-between {
     display: flex;
     flex-direction: column;
@@ -45,6 +40,16 @@
 .logo {
     height: 85px;
     width: 90px;
+}
+
+.header-holon {
+    display: flex;
+    flex-direction: row;
+    padding: 20px 0 0 10px;
+}
+
+.paddingTitle {
+    padding: 20px
 }
 
 .line {

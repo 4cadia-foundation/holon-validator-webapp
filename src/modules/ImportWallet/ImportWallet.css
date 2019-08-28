@@ -1,0 +1,23 @@
+.principal {
+    height: 100vh;
+}
+
+.menuBar {
+    background-color: var(--color-orange);
+}
+
+.menuTitleLogo {
+    display: flex;
+    
+}
+
+.logoHolonHeard {
+    width: 52px;
+    height: 48px;
+    margin-top: 4px;
+}
+
+.titleHeader {
+    padding-left: 10px;
+    color: var(--color-black);
+}
