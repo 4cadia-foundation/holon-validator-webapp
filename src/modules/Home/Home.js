@@ -8,6 +8,7 @@ import * as ValidatorActions from '../../redux/actions/validator';
 import Loader from '../../components/Loader/Loader';
 import HamburguerMenu from '../../components/HamburguerMenu/HamburguerMenu';
 import PendingValidations from '../../components/PendingValidations/PendingValidations';
+import Balance from '../../components/Balance/Balance';
 import './Home.css';
 
 class Home extends Component {
@@ -57,15 +58,12 @@ class Home extends Component {
                         <Col>
                             <div className="expandView">
                                 <HamburguerMenu />
-                                <ButtonToolbar>
-                                    <DropdownButton
-                                        bsSize="xsmall"
-                                        id="dropdown-size-extra-small"
-                                        title="Window"
-                                        bsStyle="warning">
-                                    </DropdownButton>
-                                </ButtonToolbar>
                             </div>
+                        </Col>
+                        <Col sm={2}></Col>
+                        <Col sm={6}></Col>
+                        <Col sm={3}>
+                            <Balance />
                         </Col>
                     </Row>
                     <section className="margin-top-30">

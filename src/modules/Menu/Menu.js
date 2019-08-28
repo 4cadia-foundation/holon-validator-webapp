@@ -100,9 +100,6 @@ class Menu extends Component {
                         </div>
                     </div>
                     <hr className="line-menu"></hr>
-                    <div className="margin-top-50">
-                        <Balance />
-                    </div>
                     <Button className="paragraph margin-top-50" bsSize="small" onClick={() => this.props.history.push('/welcomeback')}>Logout</Button>
                 </Col>
             </Row>
