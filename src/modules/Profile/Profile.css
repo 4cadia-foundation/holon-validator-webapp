@@ -1,8 +1,22 @@
-.btn-profile-close {
+.title-icon{
     display: flex;
-    flex-direction: row-reverse;
-}
-
-.pad10b {
-    padding-bottom: 10px;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 15em;
+  }
+  .line-home {
+    margin-top: 0;
+    width: 50em;
+    border: solid 0.5px var(--color-orange-darker);
+  }
+  .h5{
+    color: var(--color-black);
+  }
+  .card-profile {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.41);
+    height: 2.0em;
+  }
+.balance {
+    background-color: aqua;
 }
