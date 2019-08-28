@@ -6,7 +6,7 @@ import { connect } from 'react-redux';
 import * as ValidatorActions from '../../redux/actions/validator';
 
 import CloseIconPage from '../../components/CloseIconPage/CloseIconPage';
-import ScoreGraph from '../../components/ScoreGraph/ScoreGraph';
+import logo from '../../images/icon-38.png';
 import './Profile.css';
 
 class Profile extends Component {
@@ -16,7 +16,7 @@ class Profile extends Component {
         this.state={
             personalInfo: [],
         }
-    }   
+    }
 
     componentDidMount() {
         this.setState({
@@ -32,7 +32,7 @@ class Profile extends Component {
                         <CloseIconPage destination="/menu"/>
                     </div>
                     <div className="text-center margin-top-30 margin-bottom-30">
-                        {/* <img className="logoHome" src={logo} alt="Logo" />       */}
+                        <img className="logoHome" src={logo} alt="Logo" />
                     </div>
                     <Row>
                         <Col>
@@ -49,20 +49,15 @@ class Profile extends Component {
                                             id={idx.toString()}
                                             key={idx.toString()}
                                             type="text"
-                                            value={val.field + ' : ' + val.valor}
+                                            value={val.valor}
                                             readOnly
                                             className="text-center"
-                                        />                      
+                                        />
                                     </Col>
                                 </Row>
                             )
                         })
-                    }                            
-                    <Row className="text-center">
-                        <div className="margin-top-40">
-                            <ScoreGraph />
-                        </div>
-                    </Row>       
+                    }
                 </Grid>
             </div>
         );
@@ -70,10 +65,10 @@ class Profile extends Component {
 
 }
 
-const mapStateToProps = state => ({ 
+const mapStateToProps = state => ({
     validator: state.validator
   });
-  
+
   const mapDispatchToProps = dispatch => bindActionCreators(ValidatorActions, dispatch);
-  
+
   export default connect(mapStateToProps, mapDispatchToProps)(Profile);
