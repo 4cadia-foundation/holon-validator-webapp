@@ -7,7 +7,6 @@ import * as ValidatorActions from '../../redux/actions/validator';
 
 import CloseIconPage from '../../components/CloseIconPage/CloseIconPage';
 import ScoreGraph from '../../components/ScoreGraph/ScoreGraph';
-import logo from '../../images/icon-38.png';
 import './Profile.css';
 
 class Profile extends Component {
@@ -33,7 +32,7 @@ class Profile extends Component {
                         <CloseIconPage destination="/menu"/>
                     </div>
                     <div className="text-center margin-top-30 margin-bottom-30">
-                        <img className="logoHome" src={logo} alt="Logo" />      
+                        {/* <img className="logoHome" src={logo} alt="Logo" />       */}
                     </div>
                     <Row>
                         <Col>
