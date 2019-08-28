@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Grid, Row, Col, ButtonToolbar, DropdownButton, MenuItem} from 'react-bootstrap';
+import { Row, Col} from 'react-bootstrap';
 
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
@@ -51,32 +51,14 @@ class Home extends Component {
             content = <PendingValidations onlyPending={true}/>;
         }
         return (
-            <div>
-                <Grid>
+            <section>
+                <Menu />
+                <Col sm={6} className="margin-top-30">
                     <Row>
-                        <Col>
-                            <div className="expandView">
-                                <Menu />
-                                <ButtonToolbar>
-                                    <DropdownButton
-                                        bsSize="xsmall"
-                                        id="dropdown-size-extra-small"
-                                        title="Window"
-                                        bsStyle="warning">
-                                    </DropdownButton>
-                                </ButtonToolbar>
-                            </div>
-                        </Col>
+                        {content}
                     </Row>
-                    <section className="margin-top-30">
-                        <Row>
-                            <Col xs={12}>
-                                {content}
-                            </Col>
-                        </Row>
-                    </section>
-                </Grid>
-            </div>
+                </Col>
+            </section>
         );
     }
 }
