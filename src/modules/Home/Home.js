@@ -6,7 +6,7 @@ import { connect } from 'react-redux';
 import * as ValidatorActions from '../../redux/actions/validator';
 
 import Loader from '../../components/Loader/Loader';
-import HamburguerMenu from '../../components/HamburguerMenu/HamburguerMenu';
+import Menu from '../../modules/Menu/Menu';
 import PendingValidations from '../../components/PendingValidations/PendingValidations';
 import './Home.css';
 
@@ -56,7 +56,7 @@ class Home extends Component {
                     <Row>
                         <Col>
                             <div className="expandView">
-                                <HamburguerMenu />
+                                <Menu />
                                 <ButtonToolbar>
                                     <DropdownButton
                                         bsSize="xsmall"

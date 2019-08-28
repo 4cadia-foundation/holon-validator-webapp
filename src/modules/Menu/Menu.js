@@ -1,14 +1,13 @@
-import React, {Component} from 'react';
-import { Link, Redirect } from 'react-router-dom';
-import { Button, Col, DropdownButton, Glyphicon, Grid, MenuItem, Row } from 'react-bootstrap';
+import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
+import { Button, Col, Glyphicon, Grid, Row } from 'react-bootstrap';
 
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import * as ValidatorActions from '../../redux/actions/validator';
 
-import Balance from '../../components/Balance/Balance';
-import CloseIconPage from '../../components/CloseIconPage/CloseIconPage';
 import Settings from '../../config/settings';
+import logo from '../../images/logo.png';
 import '../../styles/_utils.css';
 import './Menu.css';
 
@@ -17,18 +16,11 @@ class Menu extends Component {
     constructor (props) {
       super(props)
       this.state = {
-        closeMenu: false
       }
-      this.handleClick = this.handleClick.bind(this);
+
       this.handleNetworkChange = this.handleNetworkChange.bind(this);
     }
     
-    handleClick() {
-      this.setState({
-        closeMenu: true
-      })
-    }
-
     handleNetworkChange(event) {
         console.log('menu/handleNetworkChange/event.target.value', event.target.value);
         this.props.changeNetwork(event.target.value);
@@ -41,21 +33,13 @@ class Menu extends Component {
             network = "rinkeby.";
         }
 
-        if (this.state.closeMenu) {
-            return (
-              <Redirect to='/home' />
-            )
-        }
-
         return(
         <Grid>
             <Row>
                 <Col>
-                    <div className="btn-menu-close">
-                        <CloseIconPage destination="/home"/>                    
-                    </div>
                     <div className="d-flex flex-row justify-content-between margin-top-10">
-                        <h3 id="title-menu" className="title">Validator</h3>
+                            <img className="logo-menu" src={logo} alt="Logo" />
+                            <h4 id="title-menu" className="title">Holon</h4>
                     </div>
                     <hr className="line-menu"/>
                     <div className="links">
@@ -83,26 +67,11 @@ class Menu extends Component {
                         <div className="flex-column">
                             <Link to="/backupphrase">
                                 <Glyphicon id="glyph-color" glyph="lock"/>
-                                <a href="" className="space-icon-p paragraph">Secret Backup Phrase</a>
+                                <a href="" className="space-icon-p paragraph">Backup secret phrase</a>
                             </Link>
-                        </div>
-                        <div  className="flex-column">
-                            <Glyphicon id="glyph-color" glyph="cog"/>
-                                <DropdownButton
-                                    bsSize="xsmall"
-                                    title="Select network"
-                                    id="dropdown"
-                                    className="space-icon-p paragraph">
-                                    <MenuItem eventKey="1">Main ethereum network</MenuItem>
-                                    <MenuItem eventKey="2">Rinkeby network</MenuItem>
-                                    <MenuItem eventKey="3">Localhost</MenuItem>
-                                </DropdownButton>
                         </div>
                     </div>
                     <hr className="line-menu"></hr>
-                    <div className="margin-top-50">
-                        <Balance />
-                    </div>
                     <Button className="paragraph margin-top-50" bsSize="small" onClick={() => this.props.history.push('/welcomeback')}>Logout</Button>
                 </Col>
             </Row>

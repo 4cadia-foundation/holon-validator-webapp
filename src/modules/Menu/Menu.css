@@ -2,9 +2,9 @@
     margin: 0;
 }
 
-.btn-menu-close {
-    display: flex;
-    flex-direction: row-reverse;
+.logo-menu {
+    width: 40px;
+    height: 36px;
 }
 
 .line-menu {
