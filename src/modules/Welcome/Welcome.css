@@ -43,16 +43,20 @@
 
 .containerButton {
     display: flex;
+    flex-direction: column;
     justify-content: center;
 }
 
 #welcomeButtonLogin {
-    justify-content: center;
     margin-top: 40px;
     margin-block-end: 30px;
-    width: 400px;
 }
 
 #linkColor {
     color: var(--color-black);
+}
+
+.row {
+    margin-left: 0px;
+    margin-right: 0px;
 }

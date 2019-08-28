@@ -6,7 +6,7 @@ class App extends Component {
 
     render () {
       return (
-        <div className="hollonApp">
+        <div>
          <Switch>
            {routers.map((item, index)=> (<Route key={index} path={item.path} component={item.component} exact={item.exact} />))}
          </Switch>
