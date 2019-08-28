@@ -1,14 +1,9 @@
-#container-balance {
-    height: 90px;
-    border: ridge var(--color-orange);
-    margin-top: 20px;
-    margin-bottom: 20px;
+.balance-div {
+    height: 50%;
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
-}
-
-#p-balance {
-    font-size: 27px;
+    background-color: var(--color-orange-darker);
+    width: 25%;
 }
