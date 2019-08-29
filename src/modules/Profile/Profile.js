@@ -6,6 +6,7 @@ import { connect } from 'react-redux';
 import * as ValidatorActions from '../../redux/actions/validator';
 
 import Menu from '../Menu/Menu';
+import Balance from '../../components/Balance/Balance';
 import './Profile.css';
 import '../../styles/_utils.css';
 
@@ -37,6 +38,10 @@ class Profile extends Component {
                                 <h3>Profile</h3>
                         </Col>
                         <Col sm={3}>
+                            <div className="container-balance">
+                                <h3>Your Balance</h3>
+                                <Balance />
+                            </div>
                         </Col>
                 {
                     this.state.personalInfo.map((val, idx) =>

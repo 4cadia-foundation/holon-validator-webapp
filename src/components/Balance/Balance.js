@@ -32,7 +32,7 @@ class Balance extends Component {
 
     render() {
         return(
-            <div className="balance-div margin-top-80">
+            <div className="balance-div">
                 <p className="font-size-30 text-center paragraph margin-top-10">
                     {this.state.balance} ETH
                 </p>
