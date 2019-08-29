@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Button, Grid, Row } from 'react-bootstrap';
+import { Button, Col, Grid, Row } from 'react-bootstrap';
 import { Redirect, Link } from 'react-router-dom';
 
 import { connect } from "react-redux";
@@ -59,11 +59,11 @@ class Welcome extends Component {
             <p className="paragraph">It is necessary have a <i> Holon Identity</i> to be a <br /> <strong>Validator</strong>.</p>
           </Row>
           <Row className="containerButton col-sm-12">
-            <Row className="text-center col-sm-4 col-sm-offset-4">
+            <Col className="text-center col-sm-4 col-sm-offset-4">
               <Button className="paragraph btn btn-large" bsStyle="warning" bsSize="large" id="welcomeButtonLogin" block onClick={() => this.props.history.push('/importwallet')}>
                 Login
               </Button>
-            </Row>
+            </Col>
             <Link className="paragraph" align="center" id="linkColor" to="">Do not have Holon ID? Create here</Link>
           </Row>
         </Grid>
