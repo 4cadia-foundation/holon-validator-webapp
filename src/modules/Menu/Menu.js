@@ -40,7 +40,7 @@ class Menu extends Component {
         return(
         <div>
             <Col sm={3} className="grid-menu">
-                <div className="holon-menu">
+                <div className="header-holon">
                     <img className="logo-menu" src={logo} alt="Logo" />
                     <h3 className="title-menu title">Holon</h3>
                 </div>
@@ -56,29 +56,34 @@ class Menu extends Component {
                 </div>
 
                 <div className="links">
-                    <div className="links">
+                    <div>
                         <Link to="/historyvalidations">
                             <MdHistory className="icons"/> 
                             <a className="paragraph space-icon-p">History Validations</a>
                         </Link>
                     </div>
-
-                    <hr className="line-menu"></hr>
-                    <Link to="/profile">
-                        <MdPerson className="icons"/> 
-                        <a href="" className="paragraph space-icon-p">Profile</a>
-                    </Link>
-                    <hr className="line-menu"></hr>
-                    <a href={"https://" + network + "etherscan.io/address/" + this.props.validator.address} target="_blank">
-                        <TiArrowForward className="icons"/>
-                        <span className="paragraph space-icon-p">Etherscan</span>
-                    </a>
-                    <hr className="line-menu"></hr>
-                    <Link to="/backupphrase">
-                        <MdLock className="icons"/>
-                        <a href="" className="paragraph space-icon-p">Backup secret phrase</a>
-                    </Link>
-                <hr className="line-menu"></hr>
+                        <hr className="line-menu"></hr>
+                    <div>
+                        <Link to="/profile">
+                            <MdPerson className="icons"/> 
+                            <a href="" className="paragraph space-icon-p">Profile</a>
+                        </Link>
+                        <hr className="line-menu"></hr>
+                    </div>
+                    <div>
+                        <a href={"https://" + network + "etherscan.io/address/" + this.props.validator.address} target="_blank">
+                            <TiArrowForward className="icons"/>
+                            <span className="paragraph space-icon-p">Etherscan</span>
+                        </a>
+                        <hr className="line-menu"></hr>
+                    </div>
+                    <div>
+                        <Link to="/backupphrase">
+                            <MdLock className="icons"/>
+                            <a href="" className="paragraph space-icon-p">Backup secret phrase</a>
+                        </Link>
+                        <hr className="line-menu"></hr>
+                    </div>
                 </div>
                 <Button className="paragraph" bsSize="small" onClick={() => this.props.history.push('/welcomeback')}>Logout</Button>
             </Col>

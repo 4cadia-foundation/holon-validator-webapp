@@ -42,6 +42,12 @@
     width: 90px;
 }
 
+.header-holon {
+    display: flex;
+    flex-direction: row;
+    padding: 20px 0 0 10px;    
+}
+
 .line {
     width: 100vw;
     height:2px; 
