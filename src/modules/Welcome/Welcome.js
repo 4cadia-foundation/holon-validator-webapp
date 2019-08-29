@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Button, Grid, Row } from 'react-bootstrap';
+import { Button, Col, Grid, Row } from 'react-bootstrap';
 import { Redirect, Link } from 'react-router-dom';
 
 import { connect } from "react-redux";
@@ -41,7 +41,7 @@ class Welcome extends Component {
       <div className="principal">
         <Grid className="gridFirst background">
           <p className="margin-top-80 paragraph text-center">Trustworthy Identity Data,</p>
-          <p className="secondParagraph paragraph">Decentralized.</p>
+          <p className="secondParagraph paragraph">Decentralized</p>
           <Row className="containerImageValidation">
             <img className="imageValidation" src={validation} alt="validation" />
           </Row>
@@ -52,18 +52,18 @@ class Welcome extends Component {
               <img className="logoHolon" src={holon} alt="logoHolon" />
             </Row>
             <Row className="text-center margin-top-30">
-              <h3 className="title">Welcome to Holon for Validator.</h3>
+              <h3 className="title">Welcome to Holon for Validator</h3>
             </Row>
           </Row>
           <Row className="text-center">
             <p className="paragraph">It is necessary have a <i> Holon Identity</i> to be a <br /> <strong>Validator</strong>.</p>
           </Row>
           <Row className="containerButton col-sm-12">
-            <Row className="text-center col-sm-4 col-sm-offset-4">
+            <Col className="text-center col-sm-4 col-sm-offset-4">
               <Button className="paragraph btn btn-large" bsStyle="warning" bsSize="large" id="welcomeButtonLogin" block onClick={() => this.props.history.push('/importwallet')}>
                 Login
               </Button>
-            </Row>
+            </Col>
             <Link className="paragraph" align="center" id="linkColor" to="">Do not have Holon ID? Create here</Link>
           </Row>
         </Grid>

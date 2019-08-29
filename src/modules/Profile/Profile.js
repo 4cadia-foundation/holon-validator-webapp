@@ -1,16 +1,15 @@
 import React, { Component } from 'react'
-import { Grid, Row, Col,FormControl } from 'react-bootstrap';
+import { Col, Glyphicon } from 'react-bootstrap';
 
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import * as ValidatorActions from '../../redux/actions/validator';
 
-import CloseIconPage from '../../components/CloseIconPage/CloseIconPage';
-import logo from '../../images/holon38.png';
+import Menu from '../Menu/Menu';
 import './Profile.css';
+import '../../styles/_utils.css';
 
 class Profile extends Component {
-    // Alterado
     constructor(props) {
         super(props);
         this.state={
@@ -27,38 +26,34 @@ class Profile extends Component {
     render() {
         return (
             <div>
-                <Grid>
-                     <div className="btn-profile-close">
-                        <CloseIconPage destination="/menu"/>
-                    </div>
-                    <div className="text-center margin-top-30 margin-bottom-30">
-                        <img className="logoHome" src={logo} alt="Logo" />
-                    </div>
-                    <Row>
-                        <Col>
-                            &nbsp;
+                    <Menu />
+                        <Col sm={6}>
+                                <div className="title-icon title">
+                                    <Glyphicon className="icon-inbox" glyph="inbox"/>
+                                    <h3>Workspace</h3>
+                                </div>
+                                <hr className="line-home" />
+                                <p>Home/Profile</p>
+                                <h3>Profile</h3>
                         </Col>
-                    </Row>
-                    {
-                        this.state.personalInfo.map((val, idx) =>
+                        <Col sm={3}>
+                        </Col>
+                {
+                    this.state.personalInfo.map((val, idx) =>
                         {
-                            return(
-                                <Row className="text-center pad10b" key={'row_' + idx.toString()}>
-                                    <Col>
-                                        <FormControl
-                                            id={idx.toString()}
-                                            key={idx.toString()}
-                                            type="text"
-                                            value={val.valor}
-                                            readOnly
-                                            className="text-center"
-                                        />
+                        return(
+                                <div  className="text-center pad10b" key={'row_' + idx.toString()}>
+                                    <Col sm={6}>
+                                        <div className="margin-top-30">
+                                                <div className="card-profile">
+                                                    {val.valor}
+                                                </div>
+                                        </div>
                                     </Col>
-                                </Row>
+                                </div>
                             )
                         })
                     }
-                </Grid>
             </div>
         );
     }

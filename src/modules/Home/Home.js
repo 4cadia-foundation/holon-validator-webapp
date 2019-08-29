@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Grid, Row, Col} from 'react-bootstrap';
+import { Row, Col} from 'react-bootstrap';
 
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
@@ -8,7 +8,7 @@ import * as WalletActions from "../../redux/actions/wallet";
 import EthereumQRPlugin from 'ethereum-qr-code';
 
 import Loader from '../../components/Loader/Loader';
-import HamburguerMenu from '../../components/HamburguerMenu/HamburguerMenu';
+import Menu from '../../modules/Menu/Menu';
 import PendingValidations from '../../components/PendingValidations/PendingValidations';
 import Balance from '../../components/Balance/Balance';
 import './Home.css';
@@ -73,32 +73,14 @@ class Home extends Component {
             content = <PendingValidations onlyPending={true}/>;
         }
         return (
-            <div>
-                <Grid>
+            <section>
+                <Menu />
+                <Col sm={6} className="margin-top-30">
                     <Row>
-                        <Col>
-                            <div className="expandView">
-                                <HamburguerMenu />
-                            </div>
-                        </Col>
-                        <Col sm={3}></Col>
-                        <Col sm={6}></Col>
-                        <Col sm={3}>
-                            <Balance />
-                            <div className="text-center" id="ethereum-qr-code-address">
-                                &nbsp;
-                            </div>
-                        </Col>
+                        {content}
                     </Row>
-                    <section className="margin-top-30">
-                        <Row>
-                            <Col xs={12}>
-                                {content}
-                            </Col>
-                        </Row>
-                    </section>
-                </Grid>
-            </div>
+                </Col>
+            </section>
         );
     }
 }

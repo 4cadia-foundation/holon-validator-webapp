@@ -1,14 +1,17 @@
-import React, {Component} from 'react';
-import { Link, Redirect } from 'react-router-dom';
-import { Button, Col, DropdownButton, Glyphicon, Grid, MenuItem, Row } from 'react-bootstrap';
+import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
+import { Col, Row} from 'react-bootstrap';
+import { MdLock , MdPerson , MdHistory } from "react-icons/md";
+import { TiArrowForward } from "react-icons/ti";
+import { GoSignOut} from "react-icons/go";
 
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import * as ValidatorActions from '../../redux/actions/validator';
 
-import Balance from '../../components/Balance/Balance';
-import CloseIconPage from '../../components/CloseIconPage/CloseIconPage';
 import Settings from '../../config/settings';
+import logo from '../../images/black-icon.png';
+import avatar from '../../images/boy.svg';
 import '../../styles/_utils.css';
 import './Menu.css';
 
@@ -16,22 +19,38 @@ class Menu extends Component {
   
     constructor (props) {
       super(props)
-      this.state = {
-        closeMenu: false
-      }
-      this.handleClick = this.handleClick.bind(this);
+      this.state = { validator: this.props.validator }
+      this.getName = this.getName.bind(this);
+      this.hideAddress = this.hideAddress.bind(this);
       this.handleNetworkChange = this.handleNetworkChange.bind(this);
     }
     
-    handleClick() {
-      this.setState({
-        closeMenu: true
-      })
-    }
-
     handleNetworkChange(event) {
         console.log('menu/handleNetworkChange/event.target.value', event.target.value);
         this.props.changeNetwork(event.target.value);
+    }
+
+    getName(field) {
+        const {validator} = this.state;
+        if (validator.personalInfo.length < 1) {
+          return '';
+        }
+        let filtro = validator.personalInfo.filter(item => {
+          return item.field == field;
+        });
+        if (!filtro[0]) {
+          return '';
+        }
+        return filtro[0].valor;
+    }
+
+    hideAddress (adrs) {
+        if (adrs.length > 20) {
+            return (adrs.substring(0, 20) + "...")
+        }
+        else {
+            return adrs;
+        }
     }
 
     render() {
@@ -41,69 +60,60 @@ class Menu extends Component {
             network = "rinkeby.";
         }
 
-        if (this.state.closeMenu) {
-            return (
-              <Redirect to='/home' />
-            )
-        }
-
         return(
-        <Grid>
-            <Row>
-                <Col>
-                    <div className="btn-menu-close">
-                        <CloseIconPage destination="/home"/>                    
+        <div>
+            <Col sm={3} className="grid-menu">
+                <div className="header-holon">
+                    <img className="logo-menu" src={logo} alt="Logo" />
+                    <h3 className="title-menu title">Holon</h3>
+                </div>
+                <hr className="line-menu" />
+                <div className="text-center">
+                    <Row>
+                        <img className="avatar" src={avatar} alt="Avatar" />
+                    </Row>
+                    <Row className="text-logged-area">
+                        <p className="paragraph">{ this.getName('name') }</p>
+                        <p className="paragraph">{ this.hideAddress(this.props.validator.address) }</p>
+                    </Row>
+                </div>
+
+                <div className="links">
+                    <div>
+                        <Link to="/historyvalidations" className="items-menu">
+                            <MdHistory className="icons"/> 
+                            <a className="paragraph space-icon-p">History Validations</a>
+                        </Link>
+                        <hr className="line-menu"></hr>
                     </div>
-                    <div className="d-flex flex-row justify-content-between margin-top-10">
-                        <h3 id="title-menu" className="title">Validator</h3>
+                    <div>
+                        <Link to="/profile" className="items-menu">
+                            <MdPerson className="icons"/> 
+                            <a href="" className="paragraph space-icon-p">Profile</a>
+                        </Link>
+                        <hr className="line-menu"></hr>
                     </div>
-                    <hr className="line-menu"/>
-                    <div className="links">
-                    <div className="flex-column">
-                            <Link to="/historyvalidations">
-                                <Glyphicon id="glyph-color" glyph="dashboard"/> 
-                                <a className="space-icon-p paragraph">History Validations</a>
-                            </Link>
-                        </div>
+                    <div className="items-menu">
+                        <TiArrowForward className="icons"/>
+                        <a href={"https://" + network + "etherscan.io/address/" + this.props.validator.address} target="_blank" className="paragraph space-icon-p">Etherscan</a>
+                        <hr className="line-menu"></hr>
                     </div>
-                    <hr className="line-menu" />
-                    <div className="links2">
-                        <div className="flex-column">
-                            <Link to="/profile">
-                                <Glyphicon id="glyph-color" glyph="user"/> 
-                                <a href="" className="space-icon-p paragraph">Profile</a>
-                            </Link>
-                        </div>
-                        <div className="flex-column">
-                            <a href={"https://" + network + "etherscan.io/address/" + this.props.validator.address} target="_blank">
-                                <Glyphicon id="glyph-color" glyph="share"/>
-                                <span className="space-icon-p paragraph">Etherscan</span>
-                            </a>
-                        </div>
-                        <div className="flex-column">
-                            <Link to="/backupphrase">
-                                <Glyphicon id="glyph-color" glyph="lock"/>
-                                <a href="" className="space-icon-p paragraph">Secret Backup Phrase</a>
-                            </Link>
-                        </div>
-                        <div  className="flex-column">
-                            <Glyphicon id="glyph-color" glyph="cog"/>
-                                <DropdownButton
-                                    bsSize="xsmall"
-                                    title="Select network"
-                                    id="dropdown"
-                                    className="space-icon-p paragraph">
-                                    <MenuItem eventKey="1">Main ethereum network</MenuItem>
-                                    <MenuItem eventKey="2">Rinkeby network</MenuItem>
-                                    <MenuItem eventKey="3">Localhost</MenuItem>
-                                </DropdownButton>
-                        </div>
+                    <div>
+                        <Link to="/backupphrase" className="items-menu">
+                            <MdLock className="icons"/>
+                            <a href="" className="paragraph space-icon-p">Backup secret phrase</a>
+                        </Link>
+                        <hr className="line-menu"></hr>
                     </div>
-                    <hr className="line-menu"></hr>
-                    <Button className="paragraph margin-top-50" bsSize="small" onClick={() => this.props.history.push('/welcomeback')}>Logout</Button>
-                </Col>
-            </Row>
-    </Grid>
+                </div>
+                <div className="text-right logout-item">
+                    <Link to="/welcomeback" className="items-menu">
+                        <GoSignOut className="icon-logout"/>
+                        <a href="" className="paragraph logout-p">Logout</a>
+                    </Link>
+                </div>            
+            </Col>
+        </div>
 )}}
 
 const mapStateToProps = state => ({ 
