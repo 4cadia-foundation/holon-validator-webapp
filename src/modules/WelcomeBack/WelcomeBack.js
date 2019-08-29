@@ -1,12 +1,16 @@
 import React, { Component } from 'react'
-import { Button, Form, FormControl, Grid, Row } from 'react-bootstrap';
+import { Button, Form, FormControl, Grid, Row, Col } from 'react-bootstrap';
 import { Link, Redirect } from 'react-router-dom';
 
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import * as WalletActions from "../../redux/actions/wallet";
 
+import holon from '../../images/holon.png';
+import validation from '../../images/validation.svg';
+
 import Loader from '../../components/Loader/Loader';
+
 import './WelcomeBack.css'
 
 class WelcomeBack extends Component {
@@ -62,33 +66,53 @@ class WelcomeBack extends Component {
                 <Redirect to="/choosecreateidentityorhome" />
             );
         }
-        //console.log('render/state', this.state);
         return (
-            <Grid className="margin-top-50">
-                <Row className="text-center">
-                    {/* <img className="logo" src={logo} alt="Logo" /> */}
-                </Row>
-                <Form>
-                    <div>
-                        <h3 align="center" className="title" >Welcome Back</h3>
-                        <p align="center" className="paragraph"> The decentralized web waits for you </p>
-                    </div>
-                    <label className="paragraph label-welcomeback">Password</label>
-                    <FormControl
-                        className="paragraph"
-                        id="password"
-                        type="password"
-                        value={this.state.password}
-                        placeholder="The password must have 8 characters"
-                        onChange={this.handleChange}
-                    />
-                    <Button disabled={!this.validateForm()} className="paragraph btn btn-block" bsSize="large" block bsStyle="warning" type="submit" onClick={this.handleClick}>
-                        Log in
-                </Button>
-                    <p className="paragraph p-welcomeback" align="center">Forgot your password? <Link to="/importwallet">Import</Link>  using your phrase</p>
-                </Form>
-                <Loader visible={this.state.isLoading} message={this.state.msg} />
-            </Grid>
+            <div className="principal">
+                <Grid className="gridFirst background">
+                    <p className="margin-top-80 paragraph text-center">Trustworthy Identity Data,</p>
+                    <p className="secondParagraph paragraph">Decentralized.</p>
+                    <Row className="containerImageValidation">
+                        <img className="imageValidation" src={validation} alt="validation" />
+                    </Row>
+                </Grid>
+                <Grid className="gridSecond">
+                    <Row>
+                        <Row className="text-center logoValidator margin-top-80">
+                         <img className="logoHolon" src={holon} alt="logoHolon" />
+                        </Row>
+                        <Row className="text-center margin-top-30">
+                         <h3 className="title">Welcome Back.</h3>
+                        </Row>
+                    </Row>
+                    <Row className="text-center">
+                        <p className="paragraph">The decentralized web waits for you!</p>
+                    </Row>
+                    <Row>
+                        <Col className="col-sm-12">
+                            <Form className="col-sm-6 col-sm-offset-3">
+                                <label className="paragraph label-welcomeback">Password</label>
+                                <FormControl
+                                    className="paragraph"
+                                    id="password"
+                                    type="password"
+                                    value={this.state.password}
+                                    placeholder="The password must have 8 characters"
+                                    onChange={this.handleChange}
+                                />
+                            </Form>
+                        </Col>
+                    </Row>
+                    <Row className="containerButton col-sm-12">
+                        <Col className="text-center col-sm-4 col-sm-offset-4">
+                            <Button disabled={!this.validateForm()} className="paragraph btn btn-large" bsSize="large" block bsStyle="warning" type="submit" onClick={this.handleClick}>
+                                Login
+                            </Button>
+                        </Col>
+                        <p className="paragraph p-welcomeback" align="center">Forgot your password? <Link to="/importwallet">Import</Link>  using your phrase.</p>
+                    </Row>
+                    <Loader visible={this.state.isLoading} message={this.state.msg} />
+                </Grid>
+            </div>
         );
     }
 }
