@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import { Button, Col, Row} from 'react-bootstrap';
+import { Col, Row} from 'react-bootstrap';
 import { MdLock , MdPerson , MdHistory } from "react-icons/md";
 import { TiArrowForward } from "react-icons/ti";
 import { GoSignOut} from "react-icons/go";
@@ -10,7 +10,7 @@ import { connect } from 'react-redux';
 import * as ValidatorActions from '../../redux/actions/validator';
 
 import Settings from '../../config/settings';
-import logo from '../../images/holon38.png';
+import logo from '../../images/black-icon.png';
 import avatar from '../../images/boy.svg';
 import '../../styles/_utils.css';
 import './Menu.css';
