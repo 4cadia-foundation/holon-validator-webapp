@@ -1,12 +1,11 @@
 import React, { Component } from 'react'
-import { Grid, Row, Col, Glyphicon } from 'react-bootstrap';
+import { Col, Glyphicon } from 'react-bootstrap';
 
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import * as ValidatorActions from '../../redux/actions/validator';
 
-import CloseIconPage from '../../components/CloseIconPage/CloseIconPage';
-import logo from '../../images/holon38.png';
+import Menu from '../Menu/Menu';
 import './Profile.css';
 import '../../styles/_utils.css';
 
@@ -27,41 +26,31 @@ class Profile extends Component {
     render() {
         return (
             <div>
-                <Grid>
-                    <Row>
-                        <Col sm={2}>
-                        </Col>
+                    <Menu />
                         <Col sm={6}>
                                 <div className="title-icon title">
-                                    <Glyphicon glyph="inbox"/>
-                                    <h1>Dashboard</h1>
+                                    <Glyphicon className="icon-inbox" glyph="inbox"/>
+                                    <h3>Workspace</h3>
                                 </div>
                                 <hr className="line-home" />
-                                <h5>Home/Profile</h5>
+                                <p>Home/Profile</p>
                                 <h3>Profile</h3>
                         </Col>
                         <Col sm={3}>
                         </Col>
-                    </Row>
-                </Grid>
                 {
                     this.state.personalInfo.map((val, idx) =>
                         {
                         return(
-                            <Grid>
-                                <Row  className="text-center pad10b" key={'row_' + idx.toString()}>
-                                    <Col sm={2} />
+                                <div  className="text-center pad10b" key={'row_' + idx.toString()}>
                                     <Col sm={6}>
                                         <div className="margin-top-30">
                                                 <div className="card-profile">
-                                                    {idx.toString()}
-                                                    {idx.toString()}
                                                     {val.valor}
                                                 </div>
                                         </div>
                                     </Col>
-                                </Row>
-                            </Grid>
+                                </div>
                             )
                         })
                     }
