@@ -41,7 +41,7 @@ class Welcome extends Component {
       <div className="principal">
         <Grid className="gridFirst background">
           <p className="margin-top-80 paragraph text-center">Trustworthy Identity Data,</p>
-          <p className="secondParagraph paragraph">Decentralized.</p>
+          <p className="secondParagraph paragraph">Decentralized</p>
           <Row className="containerImageValidation">
             <img className="imageValidation" src={validation} alt="validation" />
           </Row>
@@ -52,7 +52,7 @@ class Welcome extends Component {
               <img className="logoHolon" src={holon} alt="logoHolon" />
             </Row>
             <Row className="text-center margin-top-30">
-              <h3 className="title">Welcome to Holon for Validator.</h3>
+              <h3 className="title">Welcome to Holon for Validator</h3>
             </Row>
           </Row>
           <Row className="text-center">
