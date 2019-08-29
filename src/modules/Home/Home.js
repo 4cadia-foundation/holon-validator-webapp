@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
-import { Grid, Row, Col, ButtonToolbar, DropdownButton, MenuItem} from 'react-bootstrap';
+import { Grid, Row, Col} from 'react-bootstrap';
 
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import * as ValidatorActions from '../../redux/actions/validator';
+import * as WalletActions from "../../redux/actions/wallet";
+import EthereumQRPlugin from 'ethereum-qr-code';
 
 import Loader from '../../components/Loader/Loader';
 import HamburguerMenu from '../../components/HamburguerMenu/HamburguerMenu';
@@ -16,9 +18,28 @@ class Home extends Component {
     constructor(props) {
         super(props);
         this.state = {
+            address: '',
             validator: this.props.validator,
-        };
+        }
+        this._qr = new EthereumQRPlugin();
     }
+
+    componentDidMount() {
+        const sendDetails = {
+          to: this.props.wallet.address,
+        }
+        const configDetails = {
+          size:280,
+          selector: '#ethereum-qr-code-address',
+        }
+        console.log('qrcodeaddress', sendDetails);
+        console.log('qrcodeaddress', configDetails);
+        this.setState({
+          isLoading: false,
+          address: this.props.wallet.address,
+        });
+        this._qr.toCanvas(sendDetails, configDetails);
+      }
 
     componentDidMount() {
         if (!this.props.validator || !this.props.validator.objLogs || !this.props.validator.objLogs.validationAsks) {
@@ -60,10 +81,13 @@ class Home extends Component {
                                 <HamburguerMenu />
                             </div>
                         </Col>
-                        <Col sm={2}></Col>
+                        <Col sm={3}></Col>
                         <Col sm={6}></Col>
                         <Col sm={3}>
                             <Balance />
+                            <div className="text-center" id="ethereum-qr-code-address">
+                                &nbsp;
+                            </div>
                         </Col>
                     </Row>
                     <section className="margin-top-30">
@@ -80,9 +104,10 @@ class Home extends Component {
 }
 
 const mapStateToProps = state => ({
-    validator: state.validator
+    validator: state.validator,
+    wallet: state.wallet
 });
 
-const mapDispatchToProps = dispatch => bindActionCreators(ValidatorActions, dispatch);
+const mapDispatchToProps = dispatch => bindActionCreators(ValidatorActions, WalletActions, dispatch);
 
 export default connect(mapStateToProps, mapDispatchToProps)(Home);
