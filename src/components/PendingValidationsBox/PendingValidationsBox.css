@@ -3,7 +3,7 @@
   transition: 0.3s;
   margin-top: 20px;
   cursor: pointer;
-  height: 200px;
+  height: 87px;
 }
 
 .card:hover {
@@ -15,10 +15,11 @@
 }
 
 .elements {
-  height: 200px;
+  /* height: 200px; */
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   align-items: flex-start;
-  margin-left: 15px;
+  margin-left: 16px;
+  font-size: 16px;
 }

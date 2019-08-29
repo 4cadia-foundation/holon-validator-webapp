@@ -15,6 +15,7 @@ class PendingValidationsBox extends Component {
     this.openValidationWindow = this.openValidationWindow.bind(this);
     this.state = {
       validationItemData : {},
+
     };
   }
 
@@ -37,17 +38,13 @@ class PendingValidationsBox extends Component {
       )
     }
     console.log('PendingValidationsBox/render/this.state.validationItemData', this.state.validationItemData)
-    const {requesterName, field, dataValue, uriDataConfirmation, status} = this.state.validationItemData;
+    const {requesterName, status} = this.state.validationItemData;
     let statusDesc = ValidationHelper.getStatusValidationDescription(status);
     return (
 
       <div className="card paragraph" onClick={() => this.openValidationWindow()}>
         <div className="elements">
-          <p><b>Requester Name: </b>{requesterName}</p> 
-          <p><b>Field: </b>{field}</p> 
-          <p><b>Value: </b>{dataValue}</p> 
-          <p><b>URL to Confirm: </b>{uriDataConfirmation}</p>
-          <p><b>Status: </b>{statusDesc}</p>
+          <p><b>{requesterName}</b></p>
         </div>
       </div>
     )    
