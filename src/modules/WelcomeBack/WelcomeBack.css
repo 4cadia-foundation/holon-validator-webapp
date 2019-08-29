@@ -23,7 +23,6 @@
     flex-direction: column;
     color: var(--color-ice);
     font-size: 34pt;
-    text-shadow: 2px 2px var(--color-orange-darker);
 }
 
 .gridFirst.background {

@@ -148,13 +148,15 @@ class ImportWallet extends Component {
 
     return (
       <div className="principal">
-        <Col className="col-sm-3 menuBar">
-          <div className="header-holon">
-            <img className="logoHolonHeard" src={holon} alt="logoHolon" />
-            <h3 className="title titleHeader">Holon</h3>
-          </div>
-        </Col>
-        <Grid>
+        <Grid className="col-sm-3 menuBar background">
+          <Col className="col-sm-2">
+            <div className="header-holon">
+              <img className="logoHolonHeard" src={holon} alt="logoHolon" />
+              <h3 className="title titleHeader">Holon</h3>
+            </div>
+          </Col>
+        </Grid>
+        <Grid className="gridSecondImport">
           <Row>
             <div className="text-center paddingTitle">
               <h3 className="title">Import your Wallet</h3>
