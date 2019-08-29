@@ -59,3 +59,8 @@
     margin-bottom: 50px;
     font-size: 10pt;
 }
+
+.row {
+    margin-left: 0px;
+    margin-right: 0px;
+}

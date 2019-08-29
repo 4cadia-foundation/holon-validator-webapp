@@ -55,3 +55,8 @@
 #linkColor {
     color: var(--color-black);
 }
+
+.row {
+    margin-left: 0px;
+    margin-right: 0px;
+}

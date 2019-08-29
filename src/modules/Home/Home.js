@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
-import { Grid, Row, Col, ButtonToolbar, DropdownButton, MenuItem} from 'react-bootstrap';
+import { Row, Col} from 'react-bootstrap';
 
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import * as ValidatorActions from '../../redux/actions/validator';
 
 import Loader from '../../components/Loader/Loader';
-import HamburguerMenu from '../../components/HamburguerMenu/HamburguerMenu';
+import Menu from '../../modules/Menu/Menu';
 import PendingValidations from '../../components/PendingValidations/PendingValidations';
 import './Home.css';
 
@@ -51,32 +51,14 @@ class Home extends Component {
             content = <PendingValidations onlyPending={true}/>;
         }
         return (
-            <div>
-                <Grid>
+            <section>
+                <Menu />
+                <Col sm={6} className="margin-top-30">
                     <Row>
-                        <Col>
-                            <div className="expandView">
-                                <HamburguerMenu />
-                                <ButtonToolbar>
-                                    <DropdownButton
-                                        bsSize="xsmall"
-                                        id="dropdown-size-extra-small"
-                                        title="Window"
-                                        bsStyle="warning">
-                                    </DropdownButton>
-                                </ButtonToolbar>
-                            </div>
-                        </Col>
+                        {content}
                     </Row>
-                    <section className="margin-top-30">
-                        <Row>
-                            <Col xs={12}>
-                                {content}
-                            </Col>
-                        </Row>
-                    </section>
-                </Grid>
-            </div>
+                </Col>
+            </section>
         );
     }
 }
