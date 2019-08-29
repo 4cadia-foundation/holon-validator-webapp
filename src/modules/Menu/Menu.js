@@ -19,9 +19,8 @@ class Menu extends Component {
   
     constructor (props) {
       super(props)
-      this.state = {
-      }
-
+      this.state = { validator: this.props.validator }
+      this.getName = this.getName.bind(this); 
       this.handleNetworkChange = this.handleNetworkChange.bind(this);
     }
     
@@ -29,6 +28,20 @@ class Menu extends Component {
         console.log('menu/handleNetworkChange/event.target.value', event.target.value);
         this.props.changeNetwork(event.target.value);
     }
+
+    getName(field) {
+        const {validator} = this.state;
+        if (validator.personalInfo.length < 1) {
+          return '';
+        }
+        let filtro = validator.personalInfo.filter(item => {
+          return item.field == field;
+        });
+        if (!filtro[0]) {
+          return '';
+        }
+        return filtro[0].valor;
+      }
 
     render() {
 
@@ -50,42 +63,45 @@ class Menu extends Component {
                         <img className="avatar" src={avatar} alt="Avatar" />
                     </Row>
                     <Row className="text-logged-area">
-                        <p className="paragraph">Nome mocado do validator</p>
-                        <p className="paragraph">0x20E48C74d1322Cd...</p>
+                        <p className="paragraph">{ this.props.validator.address }</p>
+                        <p className="paragraph">{ this.getName('name') }</p>
                     </Row>
                 </div>
 
                 <div className="links">
                     <div>
-                        <Link to="/historyvalidations">
+                        <Link to="/historyvalidations" className="items-menu">
                             <MdHistory className="icons"/> 
                             <a className="paragraph space-icon-p">History Validations</a>
                         </Link>
-                    </div>
                         <hr className="line-menu"></hr>
+                    </div>
                     <div>
-                        <Link to="/profile">
+                        <Link to="/profile" className="items-menu">
                             <MdPerson className="icons"/> 
                             <a href="" className="paragraph space-icon-p">Profile</a>
                         </Link>
                         <hr className="line-menu"></hr>
                     </div>
-                    <div>
-                        <a href={"https://" + network + "etherscan.io/address/" + this.props.validator.address} target="_blank">
-                            <TiArrowForward className="icons"/>
-                            <span className="paragraph space-icon-p">Etherscan</span>
-                        </a>
+                    <div className="items-menu">
+                        <TiArrowForward className="icons"/>
+                        <a href={"https://" + network + "etherscan.io/address/" + this.props.validator.address} target="_blank" className="paragraph space-icon-p">Etherscan</a>
                         <hr className="line-menu"></hr>
                     </div>
                     <div>
-                        <Link to="/backupphrase">
+                        <Link to="/backupphrase" className="items-menu">
                             <MdLock className="icons"/>
                             <a href="" className="paragraph space-icon-p">Backup secret phrase</a>
                         </Link>
                         <hr className="line-menu"></hr>
                     </div>
                 </div>
-                <Button className="paragraph" bsSize="small" onClick={() => this.props.history.push('/welcomeback')}>Logout</Button>
+                <div className="text-right logout-item">
+                    <Link to="/welcomeback" className="items-menu">
+                        <GoSignOut className="icons"/>
+                        <a href="" className="paragraph space-icon-p">Logout</a>
+                    </Link>
+                </div>            
             </Col>
         </div>
 )}}
