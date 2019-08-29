@@ -12,7 +12,6 @@ import * as ValidatorActions from '../../redux/actions/validator';
 import Settings from '../../config/settings';
 import logo from '../../images/black-icon.png';
 import avatar from '../../images/boy.svg';
-import '../../styles/_utils.css';
 import './Menu.css';
 
 class Menu extends Component {

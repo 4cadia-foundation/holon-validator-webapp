@@ -57,7 +57,7 @@ class PendingValidations extends Component {
         } else {
           return ( 
             <div className="margin-top-212">
-              <p className="information paragraph text-center">Congratulations! You don't have pending requests. 😉 </p>
+              <p className="information paragraph text-center">You don't have pending requests yet 😉 </p>
             </div>
           )
         }

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Row, Col} from 'react-bootstrap';
+import { Row, Col, Glyphicon} from 'react-bootstrap';
 
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
@@ -51,14 +51,22 @@ class Home extends Component {
             content = <PendingValidations onlyPending={true}/>;
         }
         return (
-            <section>
+            <div>
                 <Menu />
-                <Col sm={6} className="margin-top-30">
+                <Col sm={6}>
+                    <div className="title-header">
+                        <Glyphicon className="icon-inbox" glyph="inbox"/>
+                        <h3 className="title">Workspace</h3>
+                    </div>
+                    <hr className="line-home" />
+                    <p className="paragraph">Home/Workspace</p>
+                    <h3 className="title">Pending validations</h3>
                     <Row>
                         {content}
                     </Row>
                 </Col>
-            </section>
+                <Col sm={3} />
+            </div>
         );
     }
 }
