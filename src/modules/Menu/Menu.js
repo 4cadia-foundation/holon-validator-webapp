@@ -20,7 +20,8 @@ class Menu extends Component {
     constructor (props) {
       super(props)
       this.state = { validator: this.props.validator }
-      this.getName = this.getName.bind(this); 
+      this.getName = this.getName.bind(this);
+      this.hideAddress = this.hideAddress.bind(this);
       this.handleNetworkChange = this.handleNetworkChange.bind(this);
     }
     
@@ -41,7 +42,16 @@ class Menu extends Component {
           return '';
         }
         return filtro[0].valor;
-      }
+    }
+
+    hideAddress (adrs) {
+        if (adrs.length > 20) {
+            return (adrs.substring(0, 20) + "...")
+        }
+        else {
+            return adrs;
+        }
+    }
 
     render() {
 
@@ -63,8 +73,8 @@ class Menu extends Component {
                         <img className="avatar" src={avatar} alt="Avatar" />
                     </Row>
                     <Row className="text-logged-area">
-                        <p className="paragraph">{ this.props.validator.address }</p>
                         <p className="paragraph">{ this.getName('name') }</p>
+                        <p className="paragraph">{ this.hideAddress(this.props.validator.address) }</p>
                     </Row>
                 </div>
 
@@ -98,8 +108,8 @@ class Menu extends Component {
                 </div>
                 <div className="text-right logout-item">
                     <Link to="/welcomeback" className="items-menu">
-                        <GoSignOut className="icons"/>
-                        <a href="" className="paragraph space-icon-p">Logout</a>
+                        <GoSignOut className="icon-logout"/>
+                        <a href="" className="paragraph logout-p">Logout</a>
                     </Link>
                 </div>            
             </Col>

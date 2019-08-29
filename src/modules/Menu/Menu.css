@@ -61,6 +61,20 @@
 }
 
 .logout-item {
-    margin: 10px 10px 0 0;
+    margin: 40px 10px 0 0;
+    vertical-align: middle;
+}
+
+.logout-p {
+    font-size: 13px;
+    margin-left: 10px;
+    color: var(--color-black);
+    vertical-align: middle;
+}
+
+.icon-logout {
+    color: var(--color-black);
+    height: 18px;
+    width: 18px;
     vertical-align: middle;
 }
