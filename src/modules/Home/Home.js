@@ -7,6 +7,7 @@ import * as ValidatorActions from '../../redux/actions/validator';
 
 import Loader from '../../components/Loader/Loader';
 import Menu from '../../modules/Menu/Menu';
+import Search from '../../components/Search/Search';
 import PendingValidations from '../../components/PendingValidations/PendingValidations';
 import './Home.css';
 
@@ -60,7 +61,10 @@ class Home extends Component {
                     </div>
                     <hr className="line-home" />
                     <p className="paragraph">Home/Workspace</p>
-                    <h3 className="title">Pending validations</h3>
+                    <div className="search-space">
+                        <h3 className="title">Pending validations</h3>
+                        <Search />
+                    </div>
                     <Row>
                         {content}
                     </Row>

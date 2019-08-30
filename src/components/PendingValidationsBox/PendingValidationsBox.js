@@ -42,12 +42,12 @@ class PendingValidationsBox extends Component {
     let statusDesc = ValidationHelper.getStatusValidationDescription(status);
     return (
 
-      <div className="card paragraph" onClick={() => this.openValidationWindow()}>
+      <div className="card" onClick={() => this.openValidationWindow()}>
         <div className="card-content">
           <img className="notebook-icon" src={notebook} alt="Notebook Icon" />
           <div className="elements">
-            <p><b>{requesterName}</b></p>
-            <p>{requester}</p>
+            <p className="paragraph"><b>{requesterName}</b></p>
+            <p className="paragraph">{requester}</p>
           </div>
         </div>
       </div>

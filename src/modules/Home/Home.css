@@ -5,3 +5,9 @@
   width: 550px;
   margin-top: 20px;
 }
+
+.search-space {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
