@@ -82,14 +82,14 @@ class Menu extends Component {
                     <div>
                         <Link to="/historyvalidations" className="items-menu">
                             <MdHistory className="icons"/> 
-                            <a className="paragraph space-icon-p">History Validations</a>
+                            <span className="paragraph space-icon-p">History Validations</span>
                         </Link>
                         <hr className="line-menu"></hr>
                     </div>
                     <div>
                         <Link to="/profile" className="items-menu">
                             <MdPerson className="icons"/> 
-                            <a href="" className="paragraph space-icon-p">Profile</a>
+                            <span href="" className="paragraph space-icon-p">Profile</span>
                         </Link>
                         <hr className="line-menu"></hr>
                     </div>
@@ -101,7 +101,7 @@ class Menu extends Component {
                     <div>
                         <Link to="/backupphrase" className="items-menu">
                             <MdLock className="icons"/>
-                            <a href="" className="paragraph space-icon-p">Backup secret phrase</a>
+                            <span href="" className="paragraph space-icon-p">Backup secret phrase</span>
                         </Link>
                         <hr className="line-menu"></hr>
                     </div>
@@ -109,7 +109,7 @@ class Menu extends Component {
                 <div className="text-right logout-item">
                     <Link to="/welcomeback" className="items-menu">
                         <GoSignOut className="icon-logout"/>
-                        <a href="" className="paragraph logout-p">Logout</a>
+                        <span href="" className="paragraph logout-p">Logout</span>
                     </Link>
                 </div>            
             </Col>
