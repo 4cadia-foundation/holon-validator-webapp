@@ -8,7 +8,7 @@ import * as WalletActions from "../../redux/actions/wallet";
 
 import Loader from "../../components/Loader/Loader";
 
-import holon from '../../images/holon38.png'; 
+import logoHolon from '../../images/holon38.png'; 
 
 import './ImportWallet.css';
 
@@ -147,18 +147,18 @@ class ImportWallet extends Component {
     }
 
     return (
-      <div className="principal">
-        <Grid className="col-sm-3 menuBar background">
+      <div className="div-principal">
+        <Grid className="col-sm-3 menu-bar background">
           <Col className="col-sm-2">
             <div className="header-holon">
-              <img className="logoHolonHeard" src={holon} alt="logoHolon" />
-              <h3 className="title titleHeader">Holon</h3>
+              <img className="logo-holon-size" src={logoHolon} alt="logoHolon" />
+              <h3 className="title title-header">Holon</h3>
             </div>
           </Col>
         </Grid>
-        <Grid className="gridSecondImport">
+        <Grid className="grid-second-import">
           <Row>
-            <div className="text-center paddingTitle">
+            <div className="text-center padding-title">
               <h3 className="title">Import your Wallet</h3>
             </div>
           </Row>
@@ -193,7 +193,6 @@ class ImportWallet extends Component {
       );
     }
 }
-
 
 const mapStateToProps = state => ({
   wallet: state.wallet
