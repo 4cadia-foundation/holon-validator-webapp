@@ -10,7 +10,6 @@ import EthereumQRPlugin from 'ethereum-qr-code';
 import Loader from '../../components/Loader/Loader';
 import Menu from '../../modules/Menu/Menu';
 import PendingValidations from '../../components/PendingValidations/PendingValidations';
-import Balance from '../../components/Balance/Balance';
 import './Home.css';
 
 class Home extends Component {
