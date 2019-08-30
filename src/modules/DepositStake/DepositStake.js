@@ -9,6 +9,8 @@ import * as ValidatorActions from "../../redux/actions/validator";
 import DataCategory from "../../components/DataCategory/DataCategory";
 import Loader from "../../components/Loader/Loader";
 
+import logoHolon from '../../images/holon38.png'; 
+
 import './DepositStake.css';
 
 class DepositStake extends Component {
@@ -87,8 +89,16 @@ class DepositStake extends Component {
         }
         if ( this.state.balance  < 0.1){
             return(
-                <div>
-                    <Grid>
+                <div className="div-principal">
+                    <Grid className="col-sm-3 menu-bar background">
+                        <Col className="col-sm-2">
+                            <div className="header-holon">
+                            <img className="logo-holon-size" src={logoHolon} alt="logoHolon" />
+                            <h3 className="title title-header">Holon</h3>
+                            </div>
+                        </Col>
+                    </Grid>
+                    <Grid className="grid-second-deposit">
                         <Row>
                             <Col> 
                                 <hr className="line"></hr>
@@ -137,6 +147,7 @@ class DepositStake extends Component {
         }
     }
 }
+
 const mapStateToProps = reduxState => ({
     validator: reduxState.validator
 });
