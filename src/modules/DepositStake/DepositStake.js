@@ -1,5 +1,5 @@
 import React,  {Component} from 'react';
-import { Grid, Row, Col, Button, Glyphicon, FormControl } from 'react-bootstrap';
+import { Grid, Row, Col, Button, Glyphicon, Form, FormControl } from 'react-bootstrap';
 import { Redirect } from 'react-router-dom';
 
 import {connect} from "react-redux";
@@ -102,11 +102,11 @@ class DepositStake extends Component {
                         <Row>
                             <Col> 
                                 <hr className="line"></hr>
-                                <h3 className="text-center">Deposit Stake</h3>
+                                <h3 className="text-center padding-title">Deposit Stake</h3>
                                 <div className="valueWei">
                                     <p className="text-center">You don't have enough funds!</p>                            
                                     <p className="text-center">To be a Holon Validator you must leave 1 ETH in stake.</p>
-                                    <p className="text-center">Your actual balance is { this.state.balance }</p>
+                                    <p className="text-center">Your actual balance is <strong>{ this.state.balance }</strong></p>
                                 </div>
                             </Col>
                         </Row>
@@ -116,30 +116,44 @@ class DepositStake extends Component {
             )
         } else {
         return(
-            <div>
+            <div className="div-principal">
+                <Grid className="col-sm-3 menu-bar background">
+                        <Col className="col-sm-2">
+                            <div className="header-holon">
+                            <img className="logo-holon-size" src={logoHolon} alt="logoHolon" />
+                            <h3 className="title title-header">Holon</h3>
+                            </div>
+                        </Col>
+                </Grid>
                 <Grid>
                     <Row>
                         <Col> 
-                            <h3 className="text-center title margin-top-50">Deposit Stake</h3>
+                            <h3 className="text-center title padding-title">Deposit Stake</h3>
                             <div className="valueWei">
                                 <p className="text-center paragraph">To be a Holon Validator you must leave 1 ETH in stake.</p>
-                                <p className="text-center paragraph">Your actual balance is { this.state.balance }</p>
+                                <p className="text-center paragraph">Your actual balance is <strong>{ this.state.balance }</strong></p>
                             </div>
                         </Col>
                     </Row>
-                    <div className="margin-top-50">
-                        <DataCategory emitsetpriceStrategy={this.setpriceStrategy}/>
-                        <FormControl
-                        type="text"
-                        value={this.state.price}
-                        placeholder="Value in wei"
-                        onChange={this.handleChange}
-                        className="paragraph margin-top-10"
-                        />
-                    </div>
-                    <div className="margin-top-50 btn-save-depositStake">
-                        <Button className="paragraph" bsStyle="warning" onClick={this.handleSubmit}><Glyphicon glyph="ok"/> Save</Button>                            
-                    </div>
+                    <Row>
+                        <Col className="col-sm-12 margin-top-30 ">
+                            <Form className="col-sm-4 col-sm-offset-4">
+                            <DataCategory emitsetpriceStrategy={this.setpriceStrategy}/>
+                                <FormControl
+                                type="text"
+                                value={this.state.price}
+                                placeholder="Value in wei"
+                                onChange={this.handleChange}
+                                className="paragraph margin-top-10"
+                                />
+                            </Form>
+                        </Col>
+                    </Row>
+                    <Row className="margin-top-80 col-sm-12 container-button-deposit">
+                        <Col className="text-center col-sm-4 col-sm-offset-4">
+                            <Button className="paragraph btn btn-large" bsStyle="warning" bsSize="large" onClick={this.handleSubmit}><Glyphicon glyph="ok"/> Save</Button>                            
+                        </Col>
+                    </Row>
                 </Grid>
                 <Loader visible={this.state.isRunning} message={this.state.msg} />
             </div>

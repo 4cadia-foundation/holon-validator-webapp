@@ -40,7 +40,7 @@ class DataCategory extends Component {
 
     return (
       <section>
-        <label className="paragraph label-data">How much do you want to charge or pay for this service?</label>
+        <label className="paragraph label-data text-center">How much do you want to charge or pay for this service?</label>
         <div>
           <select value={this.state.value} onChange={this.setCategory} id="categoryId" className="paragraph">
             {optionTemplate}
