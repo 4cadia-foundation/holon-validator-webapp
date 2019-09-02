@@ -1,23 +1,10 @@
-.title-icon{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    width: 11em;
-    margin-top: 19px;
-}
 .line-home {
   width: 40em;
   border: solid 0.5px var(--color-orange-darker);
 }
+
 .card-profile {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.41);
   height: 2.0em;
   width: 40em;
-}
-.container-balance{
-  margin-top: 100px;
-}
-.deposit-container{
-  margin-left: 5px;
 }

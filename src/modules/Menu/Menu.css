@@ -29,7 +29,7 @@
 }
 
 .text-logged-area {
-    padding-top: 15px; 
+    padding: 15px 0; 
     color:var(--color-black);
     font-size: 16px;
 }
@@ -37,14 +37,8 @@
 .links {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    margin: 20px 0 0 20px;
+    margin-left: 20px;
 } 
-
-.items-menu:hover {
-    color: #ffffff;
-    text-decoration: none;
-}
 
 .space-icon-p {
     font-size: 16px;
@@ -61,7 +55,7 @@
 }
 
 .logout-item {
-    margin: 40px 10px 0 0;
+    margin: 10px 10px 8px 0;
     vertical-align: middle;
 }
 
