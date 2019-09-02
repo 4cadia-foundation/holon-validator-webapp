@@ -9,7 +9,6 @@ import Menu from '../Menu/Menu';
 import Balance from '../../components/Balance/Balance';
 import Deposit from '../../components/Deposit/Deposit';
 import './Profile.css';
-import '../../styles/_utils.css';
 
 class Profile extends Component {
     constructor(props) {
@@ -30,9 +29,9 @@ class Profile extends Component {
             <div>
                 <Menu />
                 <Col sm={6}>
-                    <div className="title-icon title">
+                    <div className="title-header">
                         <Glyphicon className="icon-inbox" glyph="inbox"/>
-                        <h3>Workspace</h3>
+                        <h3 className="title">Workspace</h3>
                     </div>
                     <hr className="line" />
                     <p>Home/Profile</p>
@@ -58,14 +57,17 @@ class Profile extends Component {
                 </Col>
                 <Col sm={3}>
                     <div className="container-balance">
-                        <h3 className="text-center">Your Balance</h3>
+                        <h3 className="text-center paragraph">Your Balance</h3>
                         <Balance />
                     </div>
-                        <div className="deposit-container text-center margin-top-30">
-                            <h3>Deposit</h3>
-                            <Deposit />
-                        </div>
-                </Col> 
+                    <div className="deposit-container text-center margin-top-30">
+                        <h3 className="paragraph">Deposit ETH</h3>
+                        <Deposit />
+                    </div>
+                   <Row>
+                       <p className="paragraph text-center deposit-p">Deposit and receive ETH sharing your account QR code.</p>
+                   </Row>
+                </Col>                
             </div>
         );
     }

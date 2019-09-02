@@ -4,8 +4,9 @@ import { Redirect } from 'react-router-dom';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import * as ValidationActions from '../../redux/actions/validations';
-
 import * as ValidationHelper from '../../helper/validations';
+
+import notebook from '../../images/notebook-icon.svg';
 import './PendingValidationsBox.css'
 
 class PendingValidationsBox extends Component {
@@ -37,17 +38,17 @@ class PendingValidationsBox extends Component {
       )
     }
     console.log('PendingValidationsBox/render/this.state.validationItemData', this.state.validationItemData)
-    const {requesterName, field, dataValue, uriDataConfirmation, status} = this.state.validationItemData;
+    const {requesterName, requester, status} = this.state.validationItemData;
     let statusDesc = ValidationHelper.getStatusValidationDescription(status);
     return (
 
-      <div className="card paragraph" onClick={() => this.openValidationWindow()}>
-        <div className="elements">
-          <p><b>Requester Name: </b>{requesterName}</p> 
-          <p><b>Field: </b>{field}</p> 
-          <p><b>Value: </b>{dataValue}</p> 
-          <p><b>URL to Confirm: </b>{uriDataConfirmation}</p>
-          <p><b>Status: </b>{statusDesc}</p>
+      <div className="card" onClick={() => this.openValidationWindow()}>
+        <div className="card-content">
+          <img className="notebook-icon" src={notebook} alt="Notebook Icon" />
+          <div className="elements">
+            <p className="paragraph"><b>{requesterName}</b></p>
+            <p className="paragraph">{requester}</p>
+          </div>
         </div>
       </div>
     )    

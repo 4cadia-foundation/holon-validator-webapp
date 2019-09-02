@@ -102,6 +102,17 @@
     font-weight: bold;
 }
 
+.title-header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 11em;
+    margin-top: 19px;
+    vertical-align: middle;
+    color: var(--color-black);
+}
+
 .font-size-20 {
     font-size: 20px;
 }
@@ -124,8 +135,24 @@
 
 .icon-inbox {
     font-size: 20px;
+    margin: 10px 15px 0 0;
+    vertical-align: middle;
 }
 
 .line-home {
     width: 40em;
+}
+
+.container-balance {
+    margin-top: 100px;
+}
+
+.deposit-container {
+    margin-left: 5px;
+}
+
+.deposit-p {
+    color: var(--color-gray);
+    font-size: 14px;
+    margin: 0 5px;
 }
