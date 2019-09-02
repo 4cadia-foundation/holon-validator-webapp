@@ -58,6 +58,9 @@ class BackupPhrase extends Component {
                         <h3>Deposit ETH</h3>
                         <Deposit />
                     </div>
+                    <Row>
+                       <p className="paragraph text-center deposit-p">Deposit and receive ETH sharing your account QR code.</p>
+                   </Row>
                 </Col> 
             </div>
         )
