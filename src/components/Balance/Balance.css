@@ -4,6 +4,6 @@
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    background-color: var(--color-orange-darker);
+    background-color: var(--color-orange);
     width: 100%;
 }

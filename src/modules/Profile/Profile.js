@@ -33,7 +33,7 @@ class Profile extends Component {
                         <Glyphicon className="icon-inbox" glyph="inbox"/>
                         <h3 className="title">Workspace</h3>
                     </div>
-                    <hr className="line-home" />
+                    <hr className="line" />
                     <p>Home/Profile</p>
                     <h3>Profile</h3>
                     <Row>

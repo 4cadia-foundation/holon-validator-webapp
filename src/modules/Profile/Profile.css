@@ -1,6 +1,10 @@
-.line-home {
-  width: 40em;
-  border: solid 0.5px var(--color-orange-darker);
+.title-icon{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 11em;
+  margin-top: 19px;
 }
 
 .card-profile {
