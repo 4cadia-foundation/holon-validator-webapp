@@ -4,7 +4,7 @@
 
 .grid-menu {
     background-color: var(--color-orange);
-    min-height: 100vh;
+    height: 100vh;
 }
 
 .logo-menu {
