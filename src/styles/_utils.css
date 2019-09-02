@@ -84,13 +84,17 @@
 }
 
 .line {
-    width: 100vw;
-    height:2px; 
-    border:none; 
-    color:#000; 
-    background-color:#000; 
-    margin-top: 30px; 
-    margin-bottom: 0px
+    width: 40em;
+    border: solid 0.5px var(--color-orange-darker);
+}
+
+.title-icon {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 11em;
+    margin-top: 19px;
 }
 
 .title {
@@ -104,6 +108,14 @@
 
 .font-size-30 {
     font-size: 30px;
+}
+
+.container-balance {
+    margin-top: 100px;
+}
+  
+.deposit-container {
+    margin-left: 5px;
 }
 
 .paragraph {

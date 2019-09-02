@@ -34,7 +34,7 @@ class Profile extends Component {
                         <Glyphicon className="icon-inbox" glyph="inbox"/>
                         <h3>Workspace</h3>
                     </div>
-                    <hr className="line-home" />
+                    <hr className="line" />
                     <p>Home/Profile</p>
                     <h3>Profile</h3>
                     <Row>
@@ -65,9 +65,7 @@ class Profile extends Component {
                             <h3>Deposit</h3>
                             <Deposit />
                         </div>
-                   
-                </Col>
-                
+                </Col> 
             </div>
         );
     }
