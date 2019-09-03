@@ -38,7 +38,7 @@ class HistoryValidations extends Component {
                     <Row>
                         <Col>
                             <div className="btn-history-close">
-                                <CloseIconPage destination="/menu"/>                    
+                                <CloseIconPage destination="/home"/>                    
                             </div>
                             <div className="margin-top-30">
                                 <h3 id="title-history" className="text-center title">History Validations</h3>
