@@ -82,7 +82,7 @@ class Home extends Component {
                         <Glyphicon className="icon-inbox" glyph="inbox"/>
                         <h3 className="title">Workspace</h3>
                     </div>
-                    <hr className="line-home" />
+                    <hr className="line" />
                     <p className="paragraph">Home/Workspace</p>
                     <div className="search-space">
                         <h3 className="title">Pending validations</h3>
