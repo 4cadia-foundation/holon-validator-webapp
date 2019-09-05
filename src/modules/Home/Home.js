@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Row, Col, Glyphicon} from 'react-bootstrap';
+import { Row, Col, Glyphicon } from 'react-bootstrap';
 
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
@@ -82,7 +82,7 @@ class Home extends Component {
                         <Glyphicon className="icon-inbox" glyph="inbox"/>
                         <h3 className="title">Workspace</h3>
                     </div>
-                    <hr className="line-home" />
+                    <hr className="line" />
                     <p className="paragraph">Home/Workspace</p>
                     <div className="search-space">
                         <h3 className="title">Pending validations</h3>
@@ -101,9 +101,9 @@ class Home extends Component {
                         <h3 className="paragraph">Deposit ETH</h3>
                         <Deposit />
                     </div>
-                   <Row>
-                       <p className="paragraph text-center deposit-p">Deposit and receive ETH sharing your account QR code.</p>
-                   </Row>
+                <Row>
+                    <p className="paragraph text-center deposit-p">Deposit and receive ETH sharing your account QR code.</p>
+                </Row>
                 </Col>       
             </div>
         );

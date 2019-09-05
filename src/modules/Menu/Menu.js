@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import { Col, Row} from 'react-bootstrap';
+import { Col, Row } from 'react-bootstrap';
 import { MdLock , MdPerson , MdHistory } from "react-icons/md";
 import { TiArrowForward } from "react-icons/ti";
 import { GoSignOut} from "react-icons/go";
@@ -83,27 +83,27 @@ class Menu extends Component {
                             <MdHistory className="icons"/> 
                             <span className="paragraph space-icon-p">History Validations</span>
                         </Link>
-                        <hr className="line-menu"></hr>
                     </div>
+                    <hr className="line-menu"></hr>
                     <div>
                         <Link to="/profile" className="items-menu">
                             <MdPerson className="icons"/> 
                             <span href="" className="paragraph space-icon-p">Profile</span>
                         </Link>
-                        <hr className="line-menu"></hr>
                     </div>
+                    <hr className="line-menu"></hr>
                     <div className="items-menu">
                         <TiArrowForward className="icons"/>
                         <a href={"https://" + network + "etherscan.io/address/" + this.props.validator.address} target="_blank" className="paragraph space-icon-p">Etherscan</a>
-                        <hr className="line-menu"></hr>
                     </div>
+                    <hr className="line-menu"></hr>
                     <div>
                         <Link to="/backupphrase" className="items-menu">
                             <MdLock className="icons"/>
                             <span href="" className="paragraph space-icon-p">Backup secret phrase</span>
                         </Link>
-                        <hr className="line-menu"></hr>
                     </div>
+                    <hr className="line-menu"></hr>
                 </div>
                 <div className="text-right logout-item">
                     <Link to="/welcomeback" className="items-menu">
