@@ -87,7 +87,7 @@ class DepositStake extends Component {
                 <Redirect to="/home" />
             )
         }
-        if ( this.state.balance  < 0.1){
+        if ( this.state.balance  <= 1){
             return(
                 <div className="div-principal">
                     <Grid className="col-sm-3 menu-bar background">
