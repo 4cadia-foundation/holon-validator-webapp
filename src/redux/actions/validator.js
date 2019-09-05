@@ -102,7 +102,6 @@ export function addValidator(_priceStrategy, _price, dispatch) {
         try {
             let txParams = {
                 gasLimit: 3000000,
-                gasPrice: ethers.utils.parseUnits('9.0', 'gwei'),            
                 value: ethers.utils.parseEther('1.0')  
             };
             console.log('actions/addValidator/params', _priceStrategy, _price, txParams);
