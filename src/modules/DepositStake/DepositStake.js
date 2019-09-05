@@ -85,7 +85,7 @@ class DepositStake extends Component {
                 <Redirect to="/home" />
             )
         }
-        if ( this.state.balance  < 0.1){
+        if ( this.state.balance  <= 1){
             return(
                 <div>
                     <Grid>
