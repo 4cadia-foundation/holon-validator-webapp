@@ -7,8 +7,7 @@ import * as ValidatorActions from '../../redux/actions/validator';
 
 import CloseIconPage from '../../components/CloseIconPage/CloseIconPage';
 import Loader from '../../components/Loader/Loader';
-import PendingValidationsBox from '../../components/PendingValidationsBox/PendingValidationsBox';
-
+import PendingValidations from '../../components/PendingValidations/PendingValidations';
 import './HistoryValidations.css';
 
 class HistoryValidations extends Component {
@@ -39,16 +38,14 @@ class HistoryValidations extends Component {
                     <Row>
                         <Col>
                             <div className="btn-history-close">
-                                <CloseIconPage destination="/menu"/>                    
+                                <CloseIconPage destination="/home"/>                    
                             </div>
                             <div className="margin-top-30">
                                 <h3 id="title-history" className="text-center title">History Validations</h3>
                             </div>                        
                         </Col>
                     </Row>
-                    {this.state.validationResults.map((item, index) => 
-                        <PendingValidationsBox key={index} validationItemData={item} />
-                    )}
+                    <PendingValidations onlyPending={false}/>
                 </Grid>
                 <Loader visible={this.state.isProcessing} message={this.state.msg} />
             </div>

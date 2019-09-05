@@ -1,16 +1,16 @@
 import React, { Component } from 'react'
-import { Grid, Row, Col,FormControl } from 'react-bootstrap';
+import { Col, Glyphicon, Row } from 'react-bootstrap';
 
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import * as ValidatorActions from '../../redux/actions/validator';
 
-import CloseIconPage from '../../components/CloseIconPage/CloseIconPage';
-import logo from '../../images/holon38.png';
+import Menu from '../Menu/Menu';
+import Balance from '../../components/Balance/Balance';
+import Deposit from '../../components/Deposit/Deposit';
 import './Profile.css';
 
 class Profile extends Component {
-    // Alterado
     constructor(props) {
         super(props);
         this.state={
@@ -27,38 +27,47 @@ class Profile extends Component {
     render() {
         return (
             <div>
-                <Grid>
-                     <div className="btn-profile-close">
-                        <CloseIconPage destination="/menu"/>
+                <Menu />
+                <Col sm={6}>
+                    <div className="title-header">
+                        <Glyphicon className="icon-inbox" glyph="inbox"/>
+                        <h3 className="title">Workspace</h3>
                     </div>
-                    <div className="text-center margin-top-30 margin-bottom-30">
-                        <img className="logoHome" src={logo} alt="Logo" />
-                    </div>
+                    <hr className="line" />
+                    <p className="paragraph">Home/Profile</p>
+                    <h3 className="title">Profile</h3>
                     <Row>
-                        <Col>
-                            &nbsp;
+                        <Col sm={12}> 
+                            {
+                                this.state.personalInfo.map((val, idx) =>
+                                {
+                                return(
+                                    <div  className="text-center pad10b" key={'row_' + idx.toString()}>
+                                        <div className="margin-top-30">
+                                            <div className="card-profile">
+                                                {val.valor}
+                                            </div>
+                                        </div>
+                                    </div>
+                                        )
+                                    })
+                                }
                         </Col>
                     </Row>
-                    {
-                        this.state.personalInfo.map((val, idx) =>
-                        {
-                            return(
-                                <Row className="text-center pad10b" key={'row_' + idx.toString()}>
-                                    <Col>
-                                        <FormControl
-                                            id={idx.toString()}
-                                            key={idx.toString()}
-                                            type="text"
-                                            value={val.valor}
-                                            readOnly
-                                            className="text-center"
-                                        />
-                                    </Col>
-                                </Row>
-                            )
-                        })
-                    }
-                </Grid>
+                </Col>
+                <Col sm={3}>
+                    <div className="container-balance">
+                        <h3 className="text-center paragraph">Your Balance</h3>
+                        <Balance />
+                    </div>
+                    <div className="deposit-container text-center margin-top-30">
+                        <h3 className="paragraph">Deposit ETH</h3>
+                        <Deposit />
+                    </div>
+                   <Row>
+                       <p className="paragraph text-center deposit-p">Deposit and receive ETH sharing your account QR code.</p>
+                   </Row>
+                </Col>                
             </div>
         );
     }
@@ -69,6 +78,6 @@ const mapStateToProps = state => ({
     validator: state.validator
   });
 
-  const mapDispatchToProps = dispatch => bindActionCreators(ValidatorActions, dispatch);
+const mapDispatchToProps = dispatch => bindActionCreators(ValidatorActions, dispatch);
 
-  export default connect(mapStateToProps, mapDispatchToProps)(Profile);
+export default connect(mapStateToProps, mapDispatchToProps)(Profile);

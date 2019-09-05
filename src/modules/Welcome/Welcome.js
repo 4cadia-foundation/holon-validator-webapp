@@ -38,7 +38,7 @@ class Welcome extends Component {
     }
 
     return (
-      <div className="principal">
+      <div className="div-principal">
         <Grid className="gridFirst background">
           <p className="margin-top-80 paragraph text-center">Trustworthy Identity Data,</p>
           <p className="secondParagraph paragraph">Decentralized</p>
