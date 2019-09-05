@@ -34,8 +34,8 @@ class Profile extends Component {
                         <h3 className="title">Workspace</h3>
                     </div>
                     <hr className="line" />
-                    <p>Home/Profile</p>
-                    <h3>Profile</h3>
+                    <p className="paragraph">Home/Profile</p>
+                    <h3 className="title">Profile</h3>
                     <Row>
                         <Col sm={12}> 
                             {
