@@ -10,10 +10,6 @@
   box-shadow: 0 10px 16px 0 rgba(0,0,0,0.2);
 }
 
-.container {
-  padding: 2px 16px;
-}
-
 .card-content {
   display: flex;
   flex-direction: row;

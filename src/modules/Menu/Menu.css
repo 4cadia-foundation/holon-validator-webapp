@@ -2,9 +2,9 @@
     margin: 0;
 }
 
-.grid-menu {
+.grid-menu.col-sm-3 {
     background-color: var(--color-orange);
-    height: 100vh;
+    min-height: 100vh;
 }
 
 .logo-menu {
@@ -19,7 +19,7 @@
 }
 
 .line-menu {
-    border: 0.3px solid var(--color-orange-darker);
+    border: 0.5px solid var(--color-orange-darker);
     width: 100%;
 }
 

@@ -94,6 +94,8 @@ class Home extends Component {
                         </Link>
                     </p>
 
+                    <hr className="line" />
+                    <p className="paragraph">Home/Workspace</p>
                     <div className="search-space">
                         <h3 className="title">Pending validations</h3>
                         <Search />
