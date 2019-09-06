@@ -3,22 +3,31 @@
   transition: 0.3s;
   margin-top: 20px;
   cursor: pointer;
-  height: 200px;
+  height: 87px;
 }
 
 .card:hover {
   box-shadow: 0 10px 16px 0 rgba(0,0,0,0.2);
 }
 
-.container {
-  padding: 2px 16px;
+.card-content {
+  display: flex;
+  flex-direction: row;
+  padding: 19px 0 0 10px;
 }
 
 .elements {
-  height: 200px;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   align-items: flex-start;
-  margin-left: 15px;
+  margin: 0px 0 0 16px;
+  font-size: 16px;
+  vertical-align: middle;
+}
+
+.notebook-icon {
+  height: 50px;
+  width: 50px;
+  vertical-align: middle;
 }

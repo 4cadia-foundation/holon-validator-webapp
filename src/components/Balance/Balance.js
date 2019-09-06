@@ -5,6 +5,7 @@ import {connect} from "react-redux";
 import * as ValidatorActions from "../../redux/actions/validator";
 
 import './Balance.css';
+import '../../styles/_utils.css';
 
 class Balance extends Component {
 
@@ -31,8 +32,9 @@ class Balance extends Component {
 
     render() {
         return(
-            <div id="container-balance">
-                <p id="p-balance" className="text-center paragraph">
+            
+            <div className="balance-div margin-top-30">
+                <p className="font-size-30 text-center paragraph margin-top-10">
                     {this.state.balance} ETH
                 </p>
             </div>

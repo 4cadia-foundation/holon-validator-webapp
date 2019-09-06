@@ -12,6 +12,8 @@ class CardHistory extends Component {
         this.state = {
             enableDetail: false
         };
+
+        this.parseStatus.bind(this);
     }
 
 
@@ -23,12 +25,32 @@ class CardHistory extends Component {
     }
 
 
+    parseStatus ( status ) {
+        let label = '';
+        switch (status) {
+            case 0:
+                label = 'Validate';
+            break;
+            case 1:
+                label = 'Not Validate';
+            break;
+            case 2:
+                label = 'Can Not Validate';
+            break;
+        }
+        return label;
+    }
+
+
     render () {
 
         const enableDetail = this.state.enableDetail;
         const { status, name, address, date, link, data, field } = this.props.personData;
         const { toggle, emitClick } = this.props;
-       
+
+
+
+
         return (
             <section className={ `card card-history col-sm-12 `}   onClick={ toggle? this.showDetail.bind( this ) : emitClick.bind( this ) }>
 
@@ -51,7 +73,7 @@ class CardHistory extends Component {
                         </div>
 
                         <div className='col-md-4'>
-                            <p> <span>Status:</span> <strong> { status } </strong> </p>
+                            <p> <span>Status:</span> <strong> { this.parseStatus(status) } </strong> </p>
                         </div>
 
                         <div className='col-md-4'>
@@ -79,7 +101,7 @@ class CardHistory extends Component {
 CardHistory.defaultProps = {
     toggle: true,
     personData: {
-        status: 'Not valid',
+        status: 'Not defined',
         name: 'Not defined',
         field: 'Not defined',
         address: 'Not defined',
@@ -92,7 +114,7 @@ CardHistory.defaultProps = {
 CardHistory.propTypes = {
     toggle: PropTypes.bool,
     personData: PropTypes.shape({
-            status: PropTypes.oneOf(['Valid', 'Not valid', 'Not evaluate']),
+            status: PropTypes.string,
             name: PropTypes.string,
             field: PropTypes.string,
             address: PropTypes.string,
