@@ -66,8 +66,7 @@ class Validation extends Component {
 
     handleClickValidate(event) {
         event.preventDefault()     
-       // this.submitEvaluation(0)
-        this.resetValidationWindow();
+        this.submitEvaluation(0)
     }
 
     handleClickNotValidate(event){
