@@ -26,6 +26,9 @@ export default function validations(state = INITIAL_STATE, action) {
         case 'ERROR_VALIDATION_DATA':
             return {...state, error: action.error}
         break;
+        case 'LOGOUT':
+            return {...state, INITIAL_STATE}
+        break;
         default:
             return state;
     };

@@ -32,6 +32,12 @@ function checkWallet() {
     }
 }
 
+export function resetState() {
+   return(dispatch) => {
+       dispatch({type: "RESET_WALLET"});
+   }
+}
+
 export function getBalance() {
     console.log('actions/getBalance/starting');
     if (!checkWallet()) {
@@ -45,6 +51,8 @@ export function getBalance() {
         dispatch({ type: 'GET_BALANCE', balance: ethers.utils.formatEther(balance) });        
     });
 }
+
+
 
 export function getValidatorScore() {
     console.log('actions/getScore');

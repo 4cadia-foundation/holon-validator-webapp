@@ -61,6 +61,9 @@ export default function validator (state = INITIAL_STATE, action) {
     if (action.type == 'ERROR_VALIDATOR_DATA') {
         return { ...state, error: action.error, isRunning: false };
     }
-    
+
+    if(action.type == 'RESET_WALLET'){
+        return{...state, state: INITIAL_STATE}
+    }
     return state;
 }
