@@ -99,6 +99,7 @@ class WelcomeBack extends Component {
                                     value={this.state.password}
                                     placeholder="The password must have 8 characters"
                                     onChange={this.handleChange}
+                                    autoFocus
                                 />
                             </Form>
                         </Col>
