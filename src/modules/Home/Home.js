@@ -47,8 +47,6 @@ class Home extends Component {
         }
       }
 
-  
-
     static getDerivedStateFromProps(nextProps, prevState) {
         //console.log('ChooseCreateIdentityOrHome/getDerivedStateFromProps nextProps', nextProps);
         //console.log('ChooseCreateIdentityOrHome/getDerivedStateFromProps prevState', prevState);
@@ -69,13 +67,11 @@ class Home extends Component {
 
     render () {
         let content = '';
-        console.log("home/render---------------: ", this.props.validator, this.props.validator.objLogs)
         if (!this.state.validator || !this.state.validator.objLogs) {
             content = <Loader visible="true" message="Loding Profile Data" />;
         }  else {
             content = <PendingValidations onlyPending={true}/>;
         }
-        console.log("aqui...................");
         return (
             <div>
                 <Menu />
@@ -94,8 +90,6 @@ class Home extends Component {
                         </Link>
                     </p>
 
-                    <hr className="line" />
-                    <p className="paragraph">Home/Workspace</p>
                     <div className="search-space">
                         <h3 className="title">Pending validations</h3>
                         <Search />
@@ -106,7 +100,7 @@ class Home extends Component {
                 </Col>
                 <Col sm={3}>
                     <Row>
-                        <BalanceDeposit/>}
+                        <BalanceDeposit/>
                     </Row>
                 </Col>       
             </div>
