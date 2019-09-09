@@ -13,7 +13,6 @@ import Menu from '../../modules/Menu/Menu';
 import BalanceDeposit from '../../components/BalanceDeposit/BalanceDeposit';
 import Search from '../../components/Search/Search';
 import PendingValidations from '../../components/PendingValidations/PendingValidations';
-import Validation from '../../components/Validation/Validation';
 import './Home.css';
 
 class Home extends Component {
@@ -102,7 +101,7 @@ class Home extends Component {
                     <Row>
                         <BalanceDeposit/>
                     </Row>
-                </Col>       
+                </Col>
             </div>
         );
     }
@@ -113,6 +112,7 @@ const mapStateToProps = state => ({
     wallet: state.wallet
 });
 
-const mapDispatchToProps = dispatch => bindActionCreators(ValidatorActions, WalletActions, dispatch);
+const mapDispatchToProps = ( dispatch ) => Object.assign({}, bindActionCreators(ValidatorActions,  dispatch), bindActionCreators(WalletActions,  dispatch));
+
 
 export default connect(mapStateToProps, mapDispatchToProps)(Home);
