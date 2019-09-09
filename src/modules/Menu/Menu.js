@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import { Col, Row} from 'react-bootstrap';
+import { Col, Row, Button} from 'react-bootstrap';
 import { MdLock , MdPerson , MdHistory } from "react-icons/md";
 import { TiArrowForward } from "react-icons/ti";
 import { GoSignOut} from "react-icons/go";
@@ -8,17 +8,18 @@ import { GoSignOut} from "react-icons/go";
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import * as ValidatorActions from '../../redux/actions/validator';
+import * as LogoutActions from '../../redux/actions/logout';
 
 import Settings from '../../config/settings';
 import logo from '../../images/black-icon.png';
 import avatar from '../../images/boy.svg';
+import '../../redux/reducers';
 import './Menu.css';
-
 class Menu extends Component {
   
     constructor (props) {
       super(props)
-      this.state = { validator: this.props.validator }
+      this.state = { validator: this.props.validator}
       this.getName = this.getName.bind(this);
       this.hideAddress = this.hideAddress.bind(this);
       this.handleNetworkChange = this.handleNetworkChange.bind(this);
@@ -106,10 +107,9 @@ class Menu extends Component {
                         <hr className="line-menu"></hr>
                 </div>
                 <div className="text-right logout-item">
-                    <Link to="/welcomeback" className="items-menu">
-                        <GoSignOut className="icon-logout"/>
-                        <span href="" className="paragraph logout-p">Logout</span>
-                    </Link>
+                    <Button className="btn-menu" onClick={this.props.resetLogout}>
+                        <span className="paragraph logout-p">Logout</span>
+                    </Button>
                 </div>            
             </Col>
         </div>
@@ -119,6 +119,6 @@ const mapStateToProps = state => ({
     validator: state.validator
 });
   
-const mapDispatchToProps = dispatch => bindActionCreators(ValidatorActions, dispatch);
+const mapDispatchToProps = { resetLogout: LogoutActions.resetLogout };
   
 export default connect(mapStateToProps, mapDispatchToProps)(Menu);

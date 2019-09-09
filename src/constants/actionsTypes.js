@@ -12,4 +12,4 @@ export const RUNNING_METHOD = 'RUNNING_METHOD';
 export const TOASTY_SUCCESS = 'TOASTY_SUCCESS';
 export const TOASTY_ERROR = 'TOASTY_ERROR';
 
-export const RESET_WALLET = 'GET_LOGOUT';
+export const RESET_WALLET = 'RESET_WALLET';
