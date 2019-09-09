@@ -10,6 +10,18 @@
     display: inline-block;
 }
 
+.margin-left-10 {
+    margin-left: 10px;
+}
+
+.margin-right-10 {
+    margin-right: 10px;
+}
+
+.no-margin {
+    margin: 0;
+}
+
 .margin-top-30 {
     margin-top: 30px;
 }
@@ -79,7 +91,6 @@
 }
 
 .line {
-    width: 40em;
     border: solid 0.5px var(--color-orange-darker);
 }
 
@@ -119,7 +130,7 @@
 .container-balance {
     margin-top: 100px;
 }
-  
+
 .deposit-container {
     margin-left: 5px;
 }

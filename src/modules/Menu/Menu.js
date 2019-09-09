@@ -15,7 +15,7 @@ import avatar from '../../images/boy.svg';
 import './Menu.css';
 
 class Menu extends Component {
-  
+
     constructor (props) {
       super(props)
       this.state = { validator: this.props.validator }
@@ -23,7 +23,7 @@ class Menu extends Component {
       this.hideAddress = this.hideAddress.bind(this);
       this.handleNetworkChange = this.handleNetworkChange.bind(this);
     }
-    
+
     handleNetworkChange(event) {
         console.log('menu/handleNetworkChange/event.target.value', event.target.value);
         this.props.changeNetwork(event.target.value);
@@ -80,14 +80,14 @@ class Menu extends Component {
                 <div className="links">
                     <div>
                         <Link to="/historyvalidations" className="items-menu">
-                            <MdHistory className="icons"/> 
+                            <MdHistory className="icons"/>
                             <span className="paragraph space-icon-p">History Validations</span>
                         </Link>
                     </div>
                         <hr className="line-menu"></hr>
                     <div>
                         <Link to="/profile" className="items-menu">
-                            <MdPerson className="icons"/> 
+                            <MdPerson className="icons"/>
                             <span href="" className="paragraph space-icon-p">Profile</span>
                         </Link>
                     </div>
@@ -110,15 +110,15 @@ class Menu extends Component {
                         <GoSignOut className="icon-logout"/>
                         <span href="" className="paragraph logout-p">Logout</span>
                     </Link>
-                </div>            
+                </div>
             </Col>
         </div>
 )}}
 
-const mapStateToProps = state => ({ 
+const mapStateToProps = state => ({
     validator: state.validator
 });
-  
+
 const mapDispatchToProps = dispatch => bindActionCreators(ValidatorActions, dispatch);
-  
+
 export default connect(mapStateToProps, mapDispatchToProps)(Menu);

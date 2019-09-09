@@ -1,60 +1,97 @@
 import React, {Component} from 'react';
 import {Panel, Row, Col, Grid, Label, Glyphicon } from 'react-bootstrap';
+import * as Types from '../../constants/Types';
 
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import * as ValidatorActions from '../../redux/actions/validator';
 
-import CloseIconPage from '../../components/CloseIconPage/CloseIconPage';
-import Loader from '../../components/Loader/Loader';
-import PendingValidations from '../../components/PendingValidations/PendingValidations';
 import './HistoryValidations.css';
+import Menu from "../Menu/Menu";
+import Search from "../../components/Search/Search";
+import Balance from "../../components/Balance/Balance";
+import Deposit from "../../components/Deposit/Deposit";
+import CardHistory from "../../components/CardHistory/CardHistory";
 
 class HistoryValidations extends Component {
 
     constructor(props) {
         super(props);
+
         this.state = {
             isProcessing: true,
             msg: 'Loading validation list',
-            validationResults: [],
+            validationResults: []
         };
     }
 
-    componentDidMount() {
-        console.log('HistoryValidations/componentDidMount/objLogs', this.props.validator.objLogs)
-        this.setState({
-            isProcessing: false,
-            validationResults: this.props.validator.objLogs.validationResults,
-        });
-        
-    }
 
     render() {
-        console.log('HistoryValidations/render/state', this.state.validationResults)
+
+        const listHistoryValidations = this.props.validations.objLogs._validationAsks
+            .filter(item => item.status !== Types.PENDING)
+            .map( ( item ) => {
+            return {
+                status: item.status,
+                field: item.field,
+                address: item.requester,
+                name: item.requesterName,
+                data: item.dataValue,
+                link: item.uriDataConfirmation
+            };
+        });
+
         return(
             <div>
-                <Grid>
+
+                <Menu />
+                <Col sm={6}>
                     <Row>
-                        <Col>
-                            <div className="btn-history-close">
-                                <CloseIconPage destination="/home"/>                    
-                            </div>
-                            <div className="margin-top-30">
-                                <h3 id="title-history" className="text-center title">History Validations</h3>
-                            </div>                        
-                        </Col>
+                        <div className="title-header">
+                            <Glyphicon className="icon-inbox" glyph="inbox"/>
+                            <h3 className="title">Workspace</h3>
+                        </div>
                     </Row>
-                    <PendingValidations onlyPending={false}/>
-                </Grid>
-                <Loader visible={this.state.isProcessing} message={this.state.msg} />
+                    <Row>
+                        <hr  className={'line width-auto'}/>
+                        <p className="paragraph">Home / History Validations</p>
+                    </Row>
+                    <Row>
+                        <div className="search-space space-between">
+                            <h3 className="title">History Validations</h3>
+                            <Search />
+                        </div>
+                    </Row>
+                    <Row>
+                        {
+                            listHistoryValidations.map( (item, index ) => ( <CardHistory personData={ item } key={index}/> ))
+                        }
+                    </Row>
+                </Col>
+
+
+                <Col sm={3}>
+                    <div className="container-balance">
+                        <h3 className="text-center paragraph">Your Balance</h3>
+                        <Balance />
+                    </div>
+                    <div className="deposit-container text-center margin-top-30">
+                        <h3 className="paragraph">Deposit ETH</h3>
+                        <Deposit />
+                    </div>
+                    <Row>
+                        <p className="paragraph text-center deposit-p">Deposit and receive ETH sharing your account QR code.</p>
+                    </Row>
+                </Col>
+
+
             </div>
         )
     }
 }
 
-const mapStateToProps = state => ({ 
-    validator: state.validator
+const mapStateToProps = state => ({
+    validations: state.validations
 });
 
 const mapDispatchToProps = dispatch => bindActionCreators(ValidatorActions, dispatch);
