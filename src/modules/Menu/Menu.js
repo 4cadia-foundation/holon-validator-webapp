@@ -107,10 +107,11 @@ class Menu extends Component {
                         <hr className="line-menu"></hr>
                 </div>
                 <div className="text-right logout-item">
-                    <Button className="btn-menu" onClick={this.props.resetLogout}>
+                    <Link className="items-menu" onClick={this.props.resetLogout}>
+                        <GoSignOut className="icon-logout"></GoSignOut>
                         <span className="paragraph logout-p">Logout</span>
-                    </Button>
-                </div>            
+                    </Link>
+                </div>             
             </Col>
         </div>
 )}}

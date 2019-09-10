@@ -72,8 +72,3 @@
     width: 18px;
     vertical-align: middle;
 }
-.btn.btn-menu {
-    border-radius: 15px;
-    background-color: var(--color-orange);
-    border-color: var(--color-black);
-}
