@@ -50,11 +50,12 @@
     "url-loader": "^2.0.1",
     "webpack": "^4.35.3",
     "webpack-cli": "^3.3.5",
+    "webpack-dev-server": "^3.8.0",
     "webpack-livereload-plugin": "^2.2.0",
     "wiredep": "^4.0.0"
   },
   "scripts": {
-    "start": "webpack --config ./webpack.react.js --watch=true",
+    "start": "webpack-dev-server --config ./webpack.react.js --watch=true",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "build": "webpack --config ./webpack.react.js",
