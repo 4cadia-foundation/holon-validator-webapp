@@ -72,3 +72,7 @@
     width: 18px;
     vertical-align: middle;
 }
+
+#router-menu {
+    text-decoration: none;
+}

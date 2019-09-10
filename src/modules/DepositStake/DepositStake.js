@@ -9,7 +9,7 @@ import * as ValidatorActions from "../../redux/actions/validator";
 import DataCategory from "../../components/DataCategory/DataCategory";
 import Loader from "../../components/Loader/Loader";
 
-import logoHolon from '../../images/holon38.png'; 
+import logoHolon from '../../images/holon19.png'; 
 
 import './DepositStake.css';
 
