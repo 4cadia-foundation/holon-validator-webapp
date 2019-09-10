@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
-import store from './redux/store';
+import store, { history } from './redux/store';
 import { Provider } from 'react-redux';
 import 'react-toastify/dist/ReactToastify.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -10,15 +10,16 @@ import './styles/main.css';
 
 import {ToastContainer} from "react-toastify";
 import { HashRouter  } from "react-router-dom";
+import { ConnectedRouter } from "connected-react-router";
 
 ReactDOM.render(
   <Provider store={store}>
 
     <ToastContainer position={'top-center'} />
 
-    <HashRouter>
+    <ConnectedRouter history={history}>
       <App />
-    </HashRouter>
+    </ConnectedRouter>
 
   </Provider>,
   document.getElementById('root')

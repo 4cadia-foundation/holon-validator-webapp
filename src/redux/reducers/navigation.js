@@ -6,7 +6,9 @@ export default function navigation (state = INITIAL_STATE, action) {
   switch (action.type) {
     case 'ENABLE_NAVBAR':
       return {...state, enableNavBar: action.enableNavBar};
-    break;
+    case 'LOGOUT':
+      console.log('----------')
+      return { ...INITIAL_STATE };
     default:
       return state;
   }
