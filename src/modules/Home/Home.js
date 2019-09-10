@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Row, Col, Glyphicon} from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
@@ -9,8 +10,7 @@ import EthereumQRPlugin from 'ethereum-qr-code';
 
 import Loader from '../../components/Loader/Loader';
 import Menu from '../../modules/Menu/Menu';
-import Balance from '../../components/Balance/Balance';
-import Deposit from '../../components/Deposit/Deposit';
+import BalanceDeposit from '../../components/BalanceDeposit/BalanceDeposit';
 import Search from '../../components/Search/Search';
 import PendingValidations from '../../components/PendingValidations/PendingValidations';
 import './Home.css';
@@ -41,13 +41,10 @@ class Home extends Component {
           address: this.props.wallet.address,
         });
         this._qr.toCanvas(sendDetails, configDetails);
-      }
-
-    componentDidMount() {
         if (!this.props.validator || !this.props.validator.objLogs || !this.props.validator.objLogs.validationAsks) {
             this.props.getValidatorData();
         }
-    }
+      }
 
     static getDerivedStateFromProps(nextProps, prevState) {
         //console.log('ChooseCreateIdentityOrHome/getDerivedStateFromProps nextProps', nextProps);
@@ -66,9 +63,9 @@ class Home extends Component {
         return null;
     }
 
+
     render () {
         let content = '';
-        // console.log("pendingvalidations/render", this.props.validator, this.props.validator.objLogs)
         if (!this.state.validator || !this.state.validator.objLogs) {
             content = <Loader visible="true" message="Loding Profile Data" />;
         }  else {
@@ -82,8 +79,16 @@ class Home extends Component {
                         <Glyphicon className="icon-inbox" glyph="inbox"/>
                         <h3 className="title">Workspace</h3>
                     </div>
-                    <hr className="line" />
-                    <p className="paragraph">Home/Workspace</p>
+                    <hr className="line-menu" />
+                    <p className="paragraph">
+                        <Link to="#" className="items-menu">
+                           Home
+                        </Link>
+                        <Link to="/home" className="items-menu">
+                            /Workspace
+                        </Link>
+                    </p>
+
                     <div className="search-space">
                         <h3 className="title">Pending validations</h3>
                         <Search />
@@ -93,18 +98,10 @@ class Home extends Component {
                     </Row>
                 </Col>
                 <Col sm={3}>
-                    <div className="container-balance">
-                        <h3 className="text-center paragraph">Your Balance</h3>
-                        <Balance />
-                    </div>
-                    <div className="deposit-container text-center margin-top-30">
-                        <h3 className="paragraph">Deposit ETH</h3>
-                        <Deposit />
-                    </div>
-                   <Row>
-                       <p className="paragraph text-center deposit-p">Deposit and receive ETH sharing your account QR code.</p>
-                   </Row>
-                </Col>       
+                    <Row>
+                        <BalanceDeposit/>
+                    </Row>
+                </Col>
             </div>
         );
     }
@@ -115,6 +112,7 @@ const mapStateToProps = state => ({
     wallet: state.wallet
 });
 
-const mapDispatchToProps = dispatch => bindActionCreators(ValidatorActions, WalletActions, dispatch);
+const mapDispatchToProps = ( dispatch ) => Object.assign({}, bindActionCreators(ValidatorActions,  dispatch), bindActionCreators(WalletActions,  dispatch));
+
 
 export default connect(mapStateToProps, mapDispatchToProps)(Home);

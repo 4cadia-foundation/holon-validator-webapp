@@ -22,6 +22,7 @@
     "ethjs-util": "^0.1.6",
     "history": "^4.9.0",
     "react": "^16.9.0",
+    "react-animations": "^1.0.0",
     "react-bootstrap": "^0.32.4",
     "react-circular-progressbar": "^2.0.1",
     "react-dom": "^16.9.0",

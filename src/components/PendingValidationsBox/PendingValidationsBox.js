@@ -21,25 +21,28 @@ class PendingValidationsBox extends Component {
 
   componentDidMount() {
     this.setState({
-      validationItemData: this.props.validationItemData
+      validationItemData: this.props.validationItemData,
     })
   }
 
   openValidationWindow(event) {
-    console.log('PendingValidationsBox/openValidationWindow/event', event)
-    this.props.defineActiveValidation(this.state.validationItemData)    
+     console.log('PendingValidationsBox/openValidationWindow/event', event)
+     this.props.defineActiveValidation(this.state.validationItemData)  
   }
+
+
 
   render() {
     if ( (this.props.validations.activeValidation) && (this.props.validations.activeValidation.field.length>1) ) {
       console.log('PendingValidationsBox/render/this.props.validations', this.props.validations)
       return(
-        <Redirect to="/validation" />
+        <Redirect to="/validation"/>
       )
     }
     console.log('PendingValidationsBox/render/this.state.validationItemData', this.state.validationItemData)
     const {requesterName, requester, status} = this.state.validationItemData;
     let statusDesc = ValidationHelper.getStatusValidationDescription(status);
+
     return (
 
       <div className="card" onClick={() => this.openValidationWindow()}>
