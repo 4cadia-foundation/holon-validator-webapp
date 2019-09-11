@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { Col, Glyphicon, Row } from 'react-bootstrap';
+import { Redirect } from 'react-router-dom';
 
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
@@ -29,7 +30,7 @@ class Profile extends Component {
             <div>
                 <Menu />
                 <Col sm={6}>
-                    <div className="title-header">
+                    <div className="title-header"> 
                         <Glyphicon className="icon-inbox" glyph="inbox"/>
                         <h3 className="title">Workspace</h3>
                     </div>
