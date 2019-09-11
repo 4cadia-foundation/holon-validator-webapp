@@ -3,13 +3,13 @@ const webpack = require('webpack');
 const LiveReloadPlugin = require('webpack-livereload-plugin');
 const CopyPlugin = require('copy-webpack-plugin');
 const ZipPlugin = require('zip-webpack-plugin');
-
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 
 module.exports = ( watch = false, zip = false ) => {
     let module = {
         mode: 'development',
         entry: './src/index.js',
-        devtool: 'inline-source-map',
+        devtool: 'nosources-source-map',
         node: {
             net: 'empty',
             tls: 'empty',
