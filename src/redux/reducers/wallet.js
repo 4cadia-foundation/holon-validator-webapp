@@ -35,6 +35,9 @@ export default function wallet(state = INITIAL_STATE, action) {
     case ActionTypes.HAS_WALLET:
       return { ...state, hasWallet: action.hasWallet };
       break;
+    case ActionTypes.RESET_WALLET:
+      return { ...INITIAL_STATE };
+      break;
     default:
       return state;
   }
