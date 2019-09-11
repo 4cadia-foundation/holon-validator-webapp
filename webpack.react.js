@@ -9,7 +9,6 @@ module.exports = ( watch = false, zip = false ) => {
     let module = {
         mode: 'development',
         entry: './src/index.js',
-        devtool: 'nosources-source-map',
         node: {
             net: 'empty',
             tls: 'empty',
@@ -64,9 +63,9 @@ module.exports = ( watch = false, zip = false ) => {
         module.plugins.push(new LiveReloadPlugin());
     }
 
-    if (zip){
-        module.plugins.push(new ZipPlugin({path: '.',filename: './app-ipfs.zip'}));
-    }
+    // if (zip){
+    //     module.plugins.push(new ZipPlugin({path: '.',filename: './app-ipfs.zip'}));
+    // }
 
     return module;
 };

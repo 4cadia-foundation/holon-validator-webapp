@@ -9,7 +9,6 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './styles/main.css';
 
 import {ToastContainer} from "react-toastify";
-import { HashRouter  } from "react-router-dom";
 import { ConnectedRouter } from "connected-react-router";
 
 ReactDOM.render(
