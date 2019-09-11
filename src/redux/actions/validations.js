@@ -69,8 +69,7 @@ export function submitValidation(requester, field, optionChosen) {
             const filterContract = store.getState().validations.objLogs;
             let txParams = {
                 gasLimit: 3000000,
-                gasPrice: ethers.utils.parseUnits('9.0', 'gwei'),            
-                value: 0,  
+                value: ethers.utils.parseUnits('10000', 'wei')
             };
             console.log('validation/submitValidation/params', requester, field, optionChosen, txParams);
             let tx = await contract.validate(requester, field, optionChosen, txParams);
