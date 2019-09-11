@@ -63,10 +63,12 @@ class Menu extends Component {
         return(
         <div>
             <Col sm={3} className="grid-menu">
-                <div className="header-holon">
-                    <img className="logo-menu" src={logo} alt="Logo" />
-                    <h3 className="title-menu title">Holon</h3>
-                </div>
+                <Link to="/home" id="router-menu">
+                    <div className="header-holon">
+                        <img className="logo-menu" src={logo} alt="Logo" />
+                        <h3 className="title-menu title">Holon</h3>
+                    </div>
+                </Link>
                 <hr className="line-menu" />
                 <div className="text-center">
                     <Row>
