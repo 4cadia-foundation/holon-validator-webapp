@@ -20,3 +20,16 @@
     margin:5px;
     font-size: 13px;
 }
+.closeButton {
+    border: solid 0.5px;
+    border-radius: 50%; 
+    width: 38px;    
+    background-color: #fff;
+}
+
+.closeIcon {
+    color: black;
+    font-size: 26pt;
+    display: flex;
+    flex-direction: row-reverse;
+}

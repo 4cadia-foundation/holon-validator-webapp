@@ -6,3 +6,16 @@
 #title-history {
     margin-top: 20px;
 }
+
+.search-space .space-between {
+    justify-content: space-between;
+}
+
+.search-space .input-search {
+    width: auto;
+    margin-left: 0px;
+}
+
+.width-auto {
+    width: auto;
+}

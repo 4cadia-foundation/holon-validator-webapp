@@ -8,7 +8,7 @@ import * as WalletActions from "../../redux/actions/wallet";
 
 import Loader from "../../components/Loader/Loader";
 
-import logoHolon from '../../images/holon38.png'; 
+import logoHolon from '../../images/holon19.png'; 
 
 import './ImportWallet.css';
 
@@ -164,7 +164,7 @@ class ImportWallet extends Component {
           </Row>
           <Row>
             <Col className="col-sm-12">
-              <Form className="col-sm-6 col-sm-offset-3">
+              <Form className="col-sm-6 col-sm-offset-3" onSubmit={this.handleSubmit}>
                 <FormGroup validationState={this.getValidationPhrase()}>
                     <ControlLabel className="paragraph margin-top-30">Wallet Seed</ControlLabel>
                     <FormControl className="paragraph" rows="7" componentClass="textarea" placeholder="Insert your seed phrase" value={ this.state.phrase } onChange={event => this.handleChange(event, 'phrase')}/>
@@ -183,7 +183,7 @@ class ImportWallet extends Component {
                     <FormControl.Feedback />
                     <HelpBlock className="paragraph">Password must be the same as field confirm</HelpBlock>
                 </FormGroup>
-                <Button className="paragraph margin-top-50" bsSize="large" onClick={this.handleSubmit} block bsStyle="warning">Import</Button>
+                <Button className="paragraph margin-top-50" bsSize="large" type="submit" onClick={this.handleSubmit} block bsStyle="warning">Import</Button>
               </Form>
             </Col>
           </Row>

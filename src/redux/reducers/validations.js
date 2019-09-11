@@ -26,6 +26,10 @@ export default function validations(state = INITIAL_STATE, action) {
         case 'ERROR_VALIDATION_DATA':
             return {...state, error: action.error}
         break;
+        case 'CLEAN_LOGOUT':
+            console.log('------------')
+            return {...INITIAL_STATE }
+        break;
         default:
             return state;
     };

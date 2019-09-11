@@ -22,18 +22,21 @@ export default function wallet(state = INITIAL_STATE, action) {
       return { ...state, error: action.error };
       break;
     case ActionTypes.OPENING_WALLET:
-      //console.log('ActionTypes.OPENING_WALLET');
+      console.log('ActionTypes.OPENING_WALLET');
       return { ...state, error: '', openedWallet: false };
       break;
     case ActionTypes.OPEN_WALLET_ERROR:
-      //console.log('ActionTypes.OPEN_WALLET_ERROR',action.error.message);
-      return { ...state, error: action.error.message, openedWallet: false };
+      console.log('ActionTypes.OPEN_WALLET_ERROR', action);
+      return { ...state, error: action.error, openedWallet: false };
       break;
     case ActionTypes.OPEN_WALLET:
       return { ...state, ethersWallet: action.wallet, address: action.address };
       break;
     case ActionTypes.HAS_WALLET:
       return { ...state, hasWallet: action.hasWallet };
+      break;
+    case ActionTypes.RESET_WALLET:
+      return { ...INITIAL_STATE };
       break;
     default:
       return state;

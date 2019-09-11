@@ -48,6 +48,7 @@ class WelcomeBack extends Component {
     }
 
     static getDerivedStateFromProps(nextProps, prevState) {
+        // console.log(nextProps);
         if (nextProps.wallet.error.length > 2 && prevState.isLoading && prevState.password.length > 1) {
             //console.log('WelcomeBack/getDerivedStateFromProps/nextProps', nextProps.wallet.error, nextProps.wallet.error.length, (nextProps.wallet.error.length > 2));
             const msg = 'Erro: ' + nextProps.wallet.error;
@@ -89,7 +90,7 @@ class WelcomeBack extends Component {
                     </Row>
                     <Row>
                         <Col className="col-sm-12">
-                            <Form className="col-sm-6 col-sm-offset-3">
+                            <Form className="col-sm-6 col-sm-offset-3" onSubmit={this.handleClick}>
                                 <label className="paragraph label-welcomeback">Password</label>
                                 <FormControl
                                     className="paragraph"
@@ -98,6 +99,7 @@ class WelcomeBack extends Component {
                                     value={this.state.password}
                                     placeholder="The password must have 8 characters"
                                     onChange={this.handleChange}
+                                    autoFocus
                                 />
                             </Form>
                         </Col>
