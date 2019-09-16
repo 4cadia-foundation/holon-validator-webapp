@@ -1,0 +1,14 @@
+.score-validations {
+    margin: 30px;
+}
+
+#gauge-chart1 {
+    text-decoration-color: black;
+    width: 150px;
+}
+
+#validationQty{
+    font-size: 22px;
+    color: var(--color-orange);
+    font-weight: bolder;
+}

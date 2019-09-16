@@ -1,0 +1,33 @@
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+  margin-top: 20px;
+  cursor: pointer;
+  height: 87px;
+}
+
+.card:hover {
+  box-shadow: 0 10px 16px 0 rgba(0,0,0,0.2);
+}
+
+.card-content {
+  display: flex;
+  flex-direction: row;
+  padding: 19px 0 0 10px;
+}
+
+.elements {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: flex-start;
+  margin: 0px 0 0 16px;
+  font-size: 16px;
+  vertical-align: middle;
+}
+
+.notebook-icon {
+  height: 50px;
+  width: 50px;
+  vertical-align: middle;
+}

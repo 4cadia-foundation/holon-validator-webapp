@@ -1,0 +1,52 @@
+* {
+    margin: 0;
+}
+
+.paragraph-explication {
+    height: 150px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+/* .paragraph-pk {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+} */
+
+.backup-phrase {
+    border: ridge var(--color-orange);
+    height: 120px;
+}
+
+.mnemonic-returned {
+    display: flex;
+    height: 140px;
+    margin: 12px;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    padding: 5px;
+}
+
+.privateKey-returned {
+    display: flex;
+    height: 140px;
+    padding: 5px;
+    margin: 12px;
+    font-size: 18px;
+    align-items: center;
+    word-break: break-word;
+    border: ridge var(--color-orange);
+}
+
+.container-phrase-key {
+    display: flex;
+}
+
+.paragraph-size {
+    font-size: 18px;
+    padding-left: 25px;
+}

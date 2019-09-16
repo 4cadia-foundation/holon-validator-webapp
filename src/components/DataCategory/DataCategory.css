@@ -1,0 +1,14 @@
+#categoryId {
+    min-width: 100%;
+    height: 30px;
+    margin-top: 20px;
+}
+
+.label-data {
+    margin-top: 40px;
+}
+
+.btn-save-depositStake {
+    display: flex;
+    flex-direction: row-reverse;
+}

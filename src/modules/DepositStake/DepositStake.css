@@ -1,0 +1,17 @@
+.valueWei {
+    height: 90px;
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.grid-second-deposit {
+    background-color: var(--color-ice);
+}
+
+.container-button-deposit {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
