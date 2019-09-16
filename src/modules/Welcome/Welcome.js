@@ -64,7 +64,7 @@ class Welcome extends Component {
                 Login
               </Button>
             </Col>
-            <Link className="paragraph" align="center" id="linkColor" to="">Do not have Holon ID? Create here</Link>
+            <Link className="paragraph text-center"  id="linkColor" to="">Do not have Holon ID? Create here</Link>
           </Row>
         </Grid>
       </div>
