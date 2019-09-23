@@ -6,8 +6,8 @@ import {connect} from "react-redux";
 import { bindActionCreators } from 'redux';
 import * as ValidatorActions from "../../redux/actions/validator";
 
-import DataCategory from "../../components/DataCategory/DataCategory";
 import Loader from "../../components/Loader/Loader";
+import SliderStrategy from "../../components/SliderStrategy/SliderStrategy";
 
 import logoHolon from '../../images/holon19.png'; 
 
@@ -138,7 +138,7 @@ class DepositStake extends Component {
                     <Row>
                         <Col className="col-sm-12 margin-top-30 ">
                             <Form className="col-sm-4 col-sm-offset-4">
-                            <DataCategory emitsetpriceStrategy={this.setpriceStrategy}/>
+                            <SliderStrategy/>
                                 <FormControl
                                 type="text"
                                 value={this.state.price}
