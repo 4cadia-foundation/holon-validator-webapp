@@ -22,11 +22,11 @@ class DepositStake extends Component {
             isRunning: true,
             msg: 'Loading the balance of your wallet',
             methodExecuted: false,
-            priceStrategy: 0,
+            priceStrategy: 2,
             price: 0,
         }
         this.handleSubmit = this.handleSubmit.bind(this);
-        this.setpriceStrategy = this.setpriceStrategy.bind(this);
+        this.setPriceStrategy = this.setPriceStrategy.bind(this);
         this.setPrice = this.setPrice.bind(this);
         this.handleChange = this.handleChange.bind(this);
     }
@@ -73,7 +73,8 @@ class DepositStake extends Component {
     this.setState({ price: event.target.value })
   }
 
-  setpriceStrategy (_priceStrategy) {
+  setPriceStrategy (_priceStrategy) {
+      debugger;
     this.setState({ priceStrategy: _priceStrategy });
   }
 
@@ -138,7 +139,7 @@ class DepositStake extends Component {
                     <Row>
                         <Col className="col-sm-12 margin-top-30 ">
                             <Form className="col-sm-4 col-sm-offset-4">
-                            <SliderStrategy/>
+                            <SliderStrategy emitSetPriceStrategy={this.setPriceStrategy} strategy={this.state.priceStrategy}/>
                                 <FormControl
                                 type="text"
                                 value={this.state.price}
