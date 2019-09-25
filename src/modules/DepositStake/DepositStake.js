@@ -74,7 +74,6 @@ class DepositStake extends Component {
   }
 
   setPriceStrategy (_priceStrategy) {
-      debugger;
     this.setState({ priceStrategy: _priceStrategy });
   }
 
