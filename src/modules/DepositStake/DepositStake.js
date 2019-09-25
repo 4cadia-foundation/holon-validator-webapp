@@ -6,8 +6,8 @@ import {connect} from "react-redux";
 import { bindActionCreators } from 'redux';
 import * as ValidatorActions from "../../redux/actions/validator";
 
-import DataCategory from "../../components/DataCategory/DataCategory";
 import Loader from "../../components/Loader/Loader";
+import SliderStrategy from "../../components/SliderStrategy/SliderStrategy";
 
 import logoHolon from '../../images/holon19.png'; 
 
@@ -22,11 +22,11 @@ class DepositStake extends Component {
             isRunning: true,
             msg: 'Loading the balance of your wallet',
             methodExecuted: false,
-            priceStrategy: 0,
+            priceStrategy: 2,
             price: 0,
         }
         this.handleSubmit = this.handleSubmit.bind(this);
-        this.setpriceStrategy = this.setpriceStrategy.bind(this);
+        this.setPriceStrategy = this.setPriceStrategy.bind(this);
         this.setPrice = this.setPrice.bind(this);
         this.handleChange = this.handleChange.bind(this);
     }
@@ -73,7 +73,7 @@ class DepositStake extends Component {
     this.setState({ price: event.target.value })
   }
 
-  setpriceStrategy (_priceStrategy) {
+  setPriceStrategy (_priceStrategy) {
     this.setState({ priceStrategy: _priceStrategy });
   }
 
@@ -138,7 +138,7 @@ class DepositStake extends Component {
                     <Row>
                         <Col className="col-sm-12 margin-top-30 ">
                             <Form className="col-sm-4 col-sm-offset-4">
-                            <DataCategory emitsetpriceStrategy={this.setpriceStrategy}/>
+                            <SliderStrategy emitSetPriceStrategy={this.setPriceStrategy} strategy={this.state.priceStrategy}/>
                                 <FormControl
                                 type="text"
                                 value={this.state.price}
