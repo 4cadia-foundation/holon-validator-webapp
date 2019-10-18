@@ -13,13 +13,13 @@ It is necessary install node and npm to download and run this aplication.
 
 - Run the command below for the installation of the node
 
-```sh
+```
   $ sudo apt-get update
   $ sudo apt-get install nodejs
 ```
 - Run the command below for the installation of the npm
 
-```sh $ sudo apt-get install npm ```
+``` $ sudo apt-get install npm ```
 
 ## How to Install
 
@@ -27,9 +27,9 @@ To install in developer mode, follow the step-by-step :footprints::
 
 - Download the repository on your computer. Then access the directory where you downloaded this project and run the command below.
 
-1.```sh $ npm install ```
+1.``` $ npm install ```
 
-2.```sh $ npm start ```
+2.``` $ npm start ```
 
 ## Tech
 
