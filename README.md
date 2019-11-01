@@ -1,40 +1,58 @@
-## Abstract
+<p align="center">
+  <img src="docs/imgReadme/Holon38.png">
+</p>
 
-Holon is a project to manage your identity in a decentralized way. The protocol was create to save user's data in blockchain and give the power to the user to control they own data. 
-
-Holon Validator is a example of platform to validate holon users data. The user send the data to registered Validator into Blockchain and the validator can verify if that data is valide or not. Besides that the validator can choose if charge for this service.
-
+<p>
+<strong>Holon</strong> is a project to manage your identity in a decentralized way. The protocol was create to save user's data in Blockchain and give the power to the <i>user to control they own data</i>. 
+ <strong>Validator</strong> is a example of platform to validate Holon users data. The user send the data to registered Validator into Blockchain and the validator can verify if that data is valide or not. Besides that the validator can choose if charge for this service.
 The base of this extension are smart contracts, created to save and manage the user's data and relationship between users, validators and consumers.
+</p>
 
+<img src="docs/imgReadme/image (1).png">
 
-## System Requeriments 
+### User Story
 
-It is necessary install node and npm to download and run this aplication.
+**First need to have a Holon Identity.**
 
-- Run the command below for the installation of the node
+ As a Validator
+- I need balance in the wallet to pay a stake 
+- I can choose the business strategy for the job.
+- I can validate Persona's data on Holon Application
+So that I can increase my reputation and get some kind of compensation
 
-```
-  $ sudo apt-get update
-  $ sudo apt-get install nodejs
-```
-- Run the command below for the installation of the npm
+### Behavior
+**Screen: Dashboard**
+- I can see all my pending validations card
+- Then I should see the details from request validation
+- And I analyse the information
+- Then I have 3 options: Valid, Not Valid and Not Evaluate
 
-``` $ sudo apt-get install npm ```
+## Pre Requirements
+
+- It is necessary install [Node](https://nodejs.org/en/) and [Npm](https://www.npmjs.com/).
 
 ## How to Install
 
-To install in developer mode, follow the step-by-step :footprints::
+To install in developer mode, follow the step-by-step:
+1. Download the repository on your computer. 
+2. Access the directory where you downloaded this project and run the command below.
+```sh
+  $ npm install
+```
 
-- Download the repository on your computer. Then access the directory where you downloaded this project and run the command below.
+## How to Run
 
-1.``` $ npm install ```
-
-2.``` $ npm start ```
+Run the command below to start your project:
+```sh
+ $ npm start
+```
 
 ## Tech
 
-To build this application was used :hammer_and_wrench::
+To build this application was used:
 
-  - React - 16.8.6
-  - Bootstrap - 3.3.7
-  - Babel - 7.4.5
+ Technologies | Version |
+ ------ |------|
+  React | 16.8.6 |
+  Bootstrap | 3.3.7 |
+  Babel | 7.4.5 |
