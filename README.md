@@ -40,6 +40,15 @@ To install in developer mode, follow the step-by-step:
   $ npm install
 ```
 
+## How to set up ethereum node
+
+This example uses a Infura Ethereum node. To set up your own node, follow the step-by-step:
+- Open the **src** folder and access config folder
+  - holon-validator-plugin -> src -> config
+- Access **settings.js**. In this file it is possible change the "host" to a local node, Infura node or any node that you want use to run the extension. If you set up to use a local node, it is necessary change the port to your computer port.
+
+<img src="docs/imgReadme/setup-node.png">
+
 ## How to Run
 
 Run the command below to start your project:
