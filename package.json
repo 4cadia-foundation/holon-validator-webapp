@@ -11,6 +11,10 @@
   "eslintConfig": {
     "extends": "react-app"
   },
+  "prettier": {
+    "singleQuote": true,
+    "semi": true
+  },
   "babel": {
     "presets": [
       "react-app"
